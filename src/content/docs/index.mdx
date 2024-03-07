@@ -3,12 +3,10 @@ title: The Open Sourced Store App
 lastUpdated: true
 description: Get started building your docs site with Starlight.
 template: splash
-banner:
-  content: <h4>Introducing AHQ Store v1.3.2</h4>
 hero:
   tagline: Fully managed Distribution for your apps
   image:
-    file: ../../assets/logo.png
+    file: ../../assets/logo.webp
   actions:
     - text: Download AHQ Store
       link: /download
@@ -23,4 +21,22 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
 ## Why AHQ Store
 
 <CardGrid stagger>
+  <Card
+    icon="star"
+    title="Free"
+  >
+    AHQ Store is free to use! You don't have to pay anything to publish or install apps
+  </Card>
+  <Card
+    icon="github"
+    title="Open Sourced"
+  >
+    The AHQ Store project is open-sourced and available on **GitHub** at [AHQ Store app](https://github.com/ahqsoftwares/tauri-ahq-store) and [AHQ Store org](https://github.com/ahqstore)
+  </Card>
+  <Card
+    icon="seti:rust"
+    title="Powered by rust"  
+  >
+    AHQ Store is powered by rust, a highly performant and safe programming language
+  </Card>
 </CardGrid>

@@ -1,0 +1,66 @@
+img,
+svg {
+  @apply tw-select-none;
+}
+
+.user-loading {
+  @apply tw-mx-auto;
+}
+
+[data-theme="dark"] .user-loading {
+  filter: invert();
+}
+
+.user-err {
+  @apply tw-w-full tw-flex tw-flex-col tw-space-y-0 tw-justify-center tw-items-center tw-text-center;
+}
+
+.user-err svg {
+  @apply tw-w-[3em] tw-text-yellow-400;
+}
+
+[data-theme="light"] .user-err svg {
+  @apply tw-text-yellow-600;
+}
+
+.user-err h2 {
+  @apply tw-my-auto;
+}
+
+.user-island {
+  @apply tw-flex tw-space-y-0 tw-flex-col tw-w-[98vw] tw-mx-auto;
+}
+
+.user-island svg {
+  @apply tw-w-[125px] tw-h-[125px];
+}
+
+.user-island img {
+  @apply tw-rounded-[50%];
+}
+
+.user-island div {
+  @apply tw-flex tw-space-x-3;
+}
+
+.user-island section {
+  @apply tw-flex tw-flex-col tw-space-y-0;
+}
+
+.user-island h2 {
+  @apply tw-text-lg;
+}
+
+.user-island a {
+  @apply tw-flex tw-flex-row tw-text-center tw-items-center;
+  @apply tw-no-underline tw-space-x-2;
+  @apply tw-mr-auto tw-normal-case tw-dui-btn tw-dui-btn-primary;
+}
+
+.user-island a span {
+  @apply tw-block tw-text-2xl;
+}
+
+.user-island a svg {
+  @apply tw-w-5 tw-h-5;
+}

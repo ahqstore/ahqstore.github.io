@@ -1,7 +1,8 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-
 import tailwind from "@astrojs/tailwind";
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +12,8 @@ export default defineConfig({
       favicon: "/favicon.png",
       title: "AHQ Store",
       customCss: ["./src/css/global.css"],
+      lastUpdated: true,
+      titleDelimiter: "-",
       locales: {
         "en-US": {
           label: "English",
@@ -35,6 +38,7 @@ export default defineConfig({
       sidebar: [
         {
           label: "Guides",
+          badge: "v1",
           autogenerate: {
             directory: "guides",
           },
@@ -42,6 +46,7 @@ export default defineConfig({
         {
           label: "Developers",
           badge: {
+            text: "Alpha",
             variant: "danger",
           },
           autogenerate: {
@@ -51,6 +56,10 @@ export default defineConfig({
         },
         {
           label: "Framework",
+          badge: {
+            text: "Windows",
+            variant: "danger",
+          },
           autogenerate: {
             directory: "framework",
           },
@@ -60,6 +69,10 @@ export default defineConfig({
     }),
     tailwind({
       applyBaseStyles: false,
+      nesting: true,
+    }),
+    react({
+      include: "./src/dash/*",
     }),
   ],
 });

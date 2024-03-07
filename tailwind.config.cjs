@@ -5,7 +5,7 @@ module.exports = {
     extend: {},
   },
   prefix: "tw-",
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [require("daisyui")],
   daisyui: {
     prefix: "dui-",
     logs: false,

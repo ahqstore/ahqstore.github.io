@@ -25,43 +25,36 @@ export default defineConfig({
         replacesTitle: true,
       },
       social: {
-        github: "https://github.com/ahqstore",
-        email: "mailto:ahqsecret@gmail.com",
+        "github": "https://github.com/ahqstore",
+        "email": "mailto:ahqsecret@gmail.com",
         "x.com": "https://x.com/ahqsoftwares",
-        reddit: "https://www.reddit.com/r/AHQ_Softwares",
-        twitter: "https://twitter.com/ahqsoftwares",
-        instagram: "https://www.instagram.com/theofficialahqsoftwares",
-        mastodon: "https://mastodon.world/@ahqstore",
-        discord: "https://discord.gg/sxgr5dh2fz",
-        youtube: "https://www.youtube.com/channel/UC5G8xgHA-bKftjcnPzt-BFw",
+        "reddit": "https://www.reddit.com/r/AHQ_Softwares",
+        "twitter": "https://twitter.com/ahqsoftwares",
+        "instagram": "https://www.instagram.com/theofficialahqsoftwares",
+        "mastodon": "https://mastodon.world/@ahqstore",
+        "discord": "https://discord.gg/sxgr5dh2fz",
+        "youtube": "https://www.youtube.com/channel/UC5G8xgHA-bKftjcnPzt-BFw",
       },
       sidebar: [
         {
-          label: "Guides",
-          badge: "v1",
-          autogenerate: {
-            directory: "guides",
-          },
-        },
-        {
-          label: "Developers",
+          label: "Framework Guides",
           badge: {
-            text: "Alpha",
-            variant: "danger",
-          },
-          autogenerate: {
-            directory: "reference",
-          },
-          collapsed: true,
-        },
-        {
-          label: "Framework",
-          badge: {
-            text: "Windows",
+            text: "v2 Alpha",
             variant: "danger",
           },
           autogenerate: {
             directory: "framework",
+          },
+          collapsed: true,
+        },
+        {
+          label: "Developers",
+          badge: {
+            text: "v2 Alpha",
+            variant: "danger",
+          },
+          autogenerate: {
+            directory: "reference",
           },
           collapsed: true,
         },

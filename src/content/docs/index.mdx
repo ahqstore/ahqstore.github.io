@@ -11,8 +11,8 @@ hero:
     - text: Download AHQ Store
       link: /download
       variant: primary
-    - text: Guides
-      link: /guides
+    - text: Developers
+      link: /reference
       variant: secondary
 ---
 
@@ -31,12 +31,27 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
     icon="github"
     title="Open Sourced"
   >
-    The AHQ Store project is open-sourced and available on **GitHub** at [AHQ Store app](https://github.com/ahqsoftwares/tauri-ahq-store) and [AHQ Store org](https://github.com/ahqstore)
+    The AHQ Store project is open-sourced and available on **GitHub** at [AHQ Store (app)](https://github.com/ahqsoftwares/tauri-ahq-store) and [AHQ Store (org)](https://github.com/ahqstore)
   </Card>
   <Card
     icon="seti:rust"
     title="Powered by rust"  
   >
     AHQ Store is powered by rust, a highly performant and safe programming language
+  </Card>
+  <Card
+    icon="seti:windows"
+    title="Natively Supported"  
+  >
+    Native Support for Windows and Linux (Debian based only)
+  </Card>
+  <Card
+    icon="seti:powershell"
+    title="Easy Publishing"
+  >
+    Easily publish your code on our github repo and distribute it to users
+  </Card>
+  <Card icon="seti:lock" title="Secured" >
+    No one can publish your app as **"you"** unless they've access to your GitHub account
   </Card>
 </CardGrid>

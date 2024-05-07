@@ -22,7 +22,7 @@ export default function GetUser() {
   const [resp, setResp] = useState(<Loading />);
 
   useEffect(() => {
-    fetch(`https://ahqstore-server.onrender.com/users/${id}`)
+    fetch(`https://astore.loophole.site/users/${id}`)
       .then((d) => {
         if (!d.ok) {
           throw new Error("");

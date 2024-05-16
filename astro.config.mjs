@@ -20,6 +20,7 @@ export default defineConfig({
           lang: "en",
         },
       },
+      defaultLocale: "en-US",
       logo: {
         src: "./src/assets/logo.png",
         replacesTitle: true,

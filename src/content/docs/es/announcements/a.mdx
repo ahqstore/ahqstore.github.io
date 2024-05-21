@@ -1,0 +1,32 @@
+---
+title: The True Opensourceness of AHQ Store
+date: 2024-05-20
+authors: [ahqstore]
+tags: [Article]
+excerpt: Let us understand the true open sourceness of AHQ Store
+---
+
+What do you think? is AHQ Store open sourced? Let us understand the true open sourceness of AHQ Store
+
+## AHQ Store Client
+The AHQ Store Client (aka ahqsoftwares/tauri-ahq-store) is a **FULLY** open sourced client that is what AHQ Store app is. It contains
+
+- **src:** Written in react ts
+- **src-tauri:** Written in Rust, renders the react ts app
+- **src-setup:** The Setup of AHQ Store for Windows & Linux written in rust
+- **src-service:** The service/daemon used by AHQ Store Client to install/uninstall/update apps
+
+## AHQ Store Types Package
+The ahqstore-types under ahqsoftwares/tauri-ahq-store contains the types used by ahq store & service. The docs is available at https://docs.rs/ahqstore_types
+
+## AHQ Store CLI
+The AHQ Store CLI is open sourced at https://github.com/ahqstore/cli and you can install it at
+
+📦 Crates.io: https://crates.io/crates/ahqstore_cli_rs
+
+```sh
+cargo install ahqstore_cli_rs
+```
+
+## Sooo? What's not open sourced
+Almost everything under AHQ Store Project (https://github.com/ahqstore) is open sourced. There is **EXACTLY 1 REPO** which AHQ Store is not going to open source even in the future. This repo is the ahqsoftwares/ahqstore_server. This repo the is rust rocket.rs server that interacts with PostgreSQL to store account & user data.

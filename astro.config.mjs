@@ -1,5 +1,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightBlog from "starlight-blog";
+
 import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
@@ -9,6 +11,25 @@ export default defineConfig({
   site: "https://ahq-store.web.app",
   integrations: [
     starlight({
+      plugins: [
+        starlightBlog({
+          title: "Announcements",
+          prefix: "announcements",
+          authors: {
+            ahqstore: {
+              name: "AHQ Store",
+              title: "Organization",
+              picture: "/favicon.png",
+            },
+            ahq: {
+              name: "AHQ",
+              title: "Founder | Leading Developer",
+              picture: "/ahq.png",
+            },
+          },
+          recentPostCount: 15,
+        }),
+      ],
       favicon: "/favicon.png",
       title: "AHQ Store",
       customCss: ["./src/css/global.css"],
@@ -56,6 +77,13 @@ export default defineConfig({
           },
           autogenerate: {
             directory: "reference",
+          },
+          collapsed: true,
+        },
+        {
+          label: "FAQ",
+          autogenerate: {
+            directory: "faq",
           },
           collapsed: true,
         },

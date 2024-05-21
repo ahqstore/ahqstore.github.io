@@ -8,7 +8,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ahq-store.web.app",
+  site: "https://ahqstore.github.io",
   integrations: [
     starlight({
       plugins: [

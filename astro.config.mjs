@@ -44,6 +44,10 @@ export default defineConfig({
           label: "Français",
           lang: "fr",
         },
+        ko: {
+          label: "한국어",
+          lang: "ko",
+        },
       },
       defaultLocale: "root",
       logo: {

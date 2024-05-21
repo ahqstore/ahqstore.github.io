@@ -36,12 +36,16 @@ export default defineConfig({
       lastUpdated: true,
       titleDelimiter: "-",
       locales: {
-        "en-US": {
+        root: {
           label: "English",
           lang: "en",
         },
+        es: {
+          label: "Spanish",
+          lang: "es",
+        },
       },
-      defaultLocale: "en-US",
+      defaultLocale: "root",
       logo: {
         src: "./src/assets/logo.png",
         replacesTitle: true,

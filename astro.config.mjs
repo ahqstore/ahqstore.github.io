@@ -36,15 +36,11 @@ export default defineConfig({
       lastUpdated: true,
       titleDelimiter: "-",
       locales: {
-        en: {
+        root: {
           label: "English",
           lang: "en",
         },
         es: {
-          label: "Espanol",
-          lang: "es",
-        },
-        fr: {
           label: "Français",
           lang: "fr",
         },
@@ -52,36 +48,8 @@ export default defineConfig({
           label: "한국어",
           lang: "ko",
         },
-        hi: {
-          label: "हिंदी",
-          lang: "hi",
-        },
-        it: {
-          label: "Italiano",
-          lang: "it",
-        },
-        zh: {
-          label: "中文",
-          lang: "zh",
-        },
-        de: {
-          label: "Deutsch",
-          lang: "de",
-        },
-        ja: {
-          label: "日本語",
-          lang: "ja",
-        },
-        ru: {
-          label: "Русский",
-          lang: "ru",
-        },
-        pl: {
-          label: "Polski",
-          lang: "pl",
-        },
       },
-      defaultLocale: "en",
+      defaultLocale: "root",
       logo: {
         src: "./src/assets/logo.png",
         replacesTitle: true,

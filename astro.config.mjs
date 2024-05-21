@@ -41,7 +41,7 @@ export default defineConfig({
           lang: "en",
         },
         es: {
-          label: "Spanish",
+          label: "Espanol",
           lang: "es",
         },
       },

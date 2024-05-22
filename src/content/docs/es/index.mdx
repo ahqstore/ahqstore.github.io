@@ -1,0 +1,54 @@
+---
+title: La Aplicación de la Tienda Abierta
+lastUpdated: true
+description: Simplifica la gestión de tu aplicación, elige AHQ Store
+template: splash
+hero:
+  tagline: Distribución totalmente gestionada para tus aplicaciones
+  image:
+    file: ../../../assets/logo.webp
+  actions:
+    - text: Descargar AHQ Store
+      link: /download
+      variant: primary
+    - text: Desarrolladores
+      link: /reference
+      variant: secondary
+---
+
+import { Aside, Card, CardGrid } from "@astrojs/starlight/components";
+
+<Aside>
+  Para comunicarnos sobre esta aplicación de tienda abierta, necesito tu
+  comprensión en inglés.
+</Aside>
+
+## ¿Por qué AHQ Store?
+
+<CardGrid stagger>
+  <Card icon="star" title="Gratis">
+    AHQ Store es gratis de usar! No tienes que pagar nada para publicar o
+    instalar aplicaciones.
+  </Card>
+  <Card icon="github" title="Abierta al código fuente">
+    El proyecto de AHQ Store está abierto al código fuente y está disponible en
+    **GitHub** en [AHQ Store (app)](https://github.com/ahqsoftwares/tauri-ahq-store) y
+    [AHQ Store (org)](https://github.com/ahqstore)
+  </Card>
+  <Card icon="seti:rust" title="Impulsado por Rust">
+    AHQ Store está impulsado por Rust, un lenguaje de programación de alto
+    rendimiento y seguro.
+  </Card>
+  <Card icon="seti:windows" title="Compatible de forma nativa">
+    Compatibilidad totalmente nativa para Windows y Linux (sólo Debian).
+  </Card>
+  <Card icon="seti:powershell" title="Publicación fácil">
+    Publica fácilmente tu código en nuestro repositorio de GitHub y compártelo
+    con los usuarios.
+  </Card>
+  <Card icon="seti:lock" title="Seguro">
+    Nadie puede publicar tu aplicación como **"tú"** a menos que tenga acceso a
+    tu cuenta de GitHub.
+  </Card>
+</CardGrid>
+

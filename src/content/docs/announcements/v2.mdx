@@ -4,12 +4,21 @@ date: 2024-05-21
 tags: [Announcement]
 excerpt: We have decided to drop v1.5 from our tagline, to make v2 directly
 ---
-import { Aside } from '@astrojs/starlight/components';
 
+import { Aside } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+<Tabs>
+
+<TabItem label="English">
 It is to inform that v1.5 that was to fix AHQ Store v1.x has been dropped for v2. v2 will be a major update to AHQ Store, there are several changes including linux support and more bundling format.
 
 <Aside title="Why not v1.5.x?">
-v1.5 was expected to be a small release with a small set of features, but it ended up with a massive rewrite of the whole of AHQ Store backend, including but not limited to, service rewrite, linux platform support, http server rewrite, website rewrite and many more. That's why we're renaming it to AHQ Store
+  v1.5 was expected to be a small release with a small set of features, but it
+  ended up with a massive rewrite of the whole of AHQ Store backend, including
+  but not limited to, service rewrite, linux platform support, http server
+  rewrite, website rewrite and many more. That's why we're renaming it to AHQ
+  Store
 </Aside>
 
 Now let's discuss what you could expect in v2
@@ -23,3 +32,59 @@ Now let's discuss what you could expect in v2
 - You'll use [ahqstore/apps](https://github.com/ahqstore/apps) to add your app to AHQ Store
 - A new config format has been implemented
 - AHQ Store will be migrated to Tauri v2
+
+</TabItem>
+
+<TabItem label="Español">
+Es para informar que v1.5 que estaba destinado a arreglar AHQ Store v1.x ha sido descartado para v2. v2 será una actualización mayor de AHQ Store, incluyendo varios cambios, como soporte para Linux y nuevos formatos de empaquetado.
+
+<Aside title="¿Por qué no fue v1.5.x?">
+  v1.5 estaba destinado a ser una versión pequeña con un conjunto pequeño de
+  características, pero terminó siendo un a gran reescritura de todo el backend
+  de AHQ Store, incluyendo pero no limitado a, reescritura de servicios, soporte
+  para plataformas de Linux, reescritura de servidor http, reescritura de sitio
+  web y mucho más. Eso es por lo que hemos renombrado a AHQ Store
+</Aside>
+
+Ahora vamos a discutir lo que podrías esperar en v2
+
+- Como desarrollador, podrías esperar que `.msi` sea disponible para su uso
+- También podrías esperar soporte para Linux
+- Hemos reescrito nuestro interfaz de usuario HTML en Windows para usar Mica UI
+- Hemos reescrit el servicio de Windows para usar Nombres de Pipes de Windows
+- De manera similar, el servicio de Linux utiliza su propio UdpSocket
+- Hemos creado un instalador para Windows y Linux Debian
+- Usarás [ahqstore/apps](https://github.com/ahqstore/apps) para agregar tu aplicación a AHQ Store
+- Se ha implementado un nuevo formato de configuración
+- AHQ Store será migrado a Tauri v2
+
+</TabItem>
+
+<TabItem label="हिंदी">
+इस मेसेज़ में सुनिश्चित करने के लिए याद है कि v1.5 जो मौजूदार स्थान को ठीक करने के लिए अर्ध में बनाया गया है, इसलिए v2 के लिए डिसकार्ड हो गया है. v2 में AHQ Store का एक महान अपडेट होगा, जो कई परिवर्तनों को समर्थित करेगा, जैसे कि Linux समर्थन और अधिक पैकेजिंग फ़ार्मेट।
+
+<Aside title="क्यों नहीं v1.5.x?">
+  v1.5 में बहुत सालों की एक छोटी रिलीज़ के लिए मौजूदार होना चाहिये था, लेकिन
+  इसका अंतिम रूप में पूर्व में AHQ Store का पूर्व परिपहलक का बहुत बडा
+  पुनर्संश्लित हो गया है, जो सेमान के साथ से नहीं है, बल्कि सेवाएं को
+  पुनर्संश्लित करने, Linux की प्लाटफ़ॉर्म की समर्थन को प्रदान करने, http सर्वर
+  को पुनर्संश्लित करने, वेबसाइट को पुनर्संश्लित करने और कई अधिक जानकारी को
+  पुनर्संश्लित करने में से बहुत से शामिल है। यह कारण है कि हम इसलिए AHQ Store को
+  नाम दे रहे हैं।
+</Aside>
+
+अब आप किसी तरह के परिवर्तनों को v2 के साथ अपडेट करने में मौजूदार हो सकते हैं:
+
+- आप के पास का डेवलोपर, `.msi` को उपयोग करने के लिए मौजूदार हो सकते हैं
+- आप को Linux का समर्थन का प्रदर्शन करने की अनुमति है
+- हम Windows के लिए HTML UI को Mica UI का उपयोग करके पुनर्संश्लित कर चुके हैं
+- हम Windows के लिए Windows के लिए Named Pipes का उपयोग करके सर्विस को पुनर्संश्लित करने की कोशिशे की हैं
+- समान्य रूप से Linux के लिए UdpSocket का उपयोग करके सर्विस को पुनर्संश्लित करने की कोशिशे की हैं
+- हम Windows और Linux Debian के लिए इंस्तॉलर बनाए हैं
+- आप इसलिए [ahqstore/apps](https://github.com/ahqstore/apps) का उपयोग करके अप्प्लिकेशन को AHQ Store में जोड़ सकते हैं
+- एक नया कॉन्फ़िगरेशन फॉर्मैt का प्रयोग किया जा रहा है
+- AHQ Store को Tauri v2 में स्थानांतरित करने की कोशिशे की हैं
+
+</TabItem>
+
+</Tabs>

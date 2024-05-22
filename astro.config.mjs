@@ -41,12 +41,12 @@ export default defineConfig({
           lang: "en",
         },
         es: {
-          label: "Français",
-          lang: "fr",
+          label: "Español",
+          lang: "es",
         },
-        ko: {
-          label: "한국어",
-          lang: "ko",
+        hi: {
+          label: "हिंदी",
+          lang: "hi",
         },
       },
       defaultLocale: "root",
@@ -68,6 +68,10 @@ export default defineConfig({
       sidebar: [
         {
           label: "Framework Guides",
+          translations: {
+            hi: "फ्रेमवर्क गाइड",
+            es: "Guía de Frameworks",
+          },
           badge: {
             text: "v2 Alpha",
             variant: "danger",
@@ -79,6 +83,10 @@ export default defineConfig({
         },
         {
           label: "Developers",
+          translations: {
+            hi: "डेवलपर",
+            es: "Desarrolladores",
+          },
           badge: {
             text: "v2 Alpha",
             variant: "danger",
@@ -90,6 +98,10 @@ export default defineConfig({
         },
         {
           label: "FAQ",
+          translations: {
+            hi: "सामान्य प्रश्न",
+            es: "Preguntas Frecuentes",
+          },
           autogenerate: {
             directory: "faq",
           },

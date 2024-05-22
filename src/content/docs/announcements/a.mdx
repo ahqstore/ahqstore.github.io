@@ -6,9 +6,16 @@ tags: [Article]
 excerpt: Let us understand the true open sourceness of AHQ Store
 ---
 
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+<Tabs>
+
+<TabItem label="English">
+
 What do you think? is AHQ Store open sourced? Let us understand the true open sourceness of AHQ Store
 
 ## AHQ Store Client
+
 The AHQ Store Client (aka ahqsoftwares/tauri-ahq-store) is a **FULLY** open sourced client that is what AHQ Store app is. It contains
 
 - **src:** Written in react ts
@@ -17,9 +24,11 @@ The AHQ Store Client (aka ahqsoftwares/tauri-ahq-store) is a **FULLY** open sour
 - **src-service:** The service/daemon used by AHQ Store Client to install/uninstall/update apps
 
 ## AHQ Store Types Package
+
 The ahqstore-types under ahqsoftwares/tauri-ahq-store contains the types used by ahq store & service. The docs is available at https://docs.rs/ahqstore_types
 
 ## AHQ Store CLI
+
 The AHQ Store CLI is open sourced at https://github.com/ahqstore/cli and you can install it at
 
 📦 Crates.io: https://crates.io/crates/ahqstore_cli_rs
@@ -29,4 +38,59 @@ cargo install ahqstore_cli_rs
 ```
 
 ## Sooo? What's not open sourced
+
 Almost everything under AHQ Store Project (https://github.com/ahqstore) is open sourced. There is **EXACTLY 1 REPO** which AHQ Store is not going to open source even in the future. This repo is the ahqsoftwares/ahqstore_server. This repo the is rust rocket.rs server that interacts with PostgreSQL to store account & user data.
+
+</TabItem>
+
+<TabItem label="Español">
+
+¿Te parece que AHQ Store está abierto? Comprendemos la auténtica apertura de AHQ Store
+
+## AHQ Store Client
+
+El cliente de AHQ Store (con nombre de usuario ahqsoftwares/tauri-ahq-store) es un cliente totalmente abierto que es la aplicación de AHQ Store. Contiene:
+
+- **src:** Escrito en react ts
+- **src-tauri:** Escrito en Rust, renderiza la aplicación de react ts
+- **src-setup:** El programa de configuración de AHQ Store para Windows y Linux escrito en rust
+- **src-service:** El servicio/demonio utilizado por el cliente de AHQ Store para instalar/desinstalar/actualizar aplicaciones
+
+## Paquete de tipos de AHQ Store
+
+El paquete ahqstore-types bajo ahqsoftwares/tauri-ahq-store contiene los tipos utilizados por AHQ Store y el servicio. La documentación está disponible en https://docs.rs/ahqstore_types
+
+## CLI de AHQ Store
+
+La CLI de AHQ Store está abierta en https://github.com/ahqstore/cli y puedes instalarla con
+
+📦 Crates.io: https://crates.io/crates/ahqstore_cli_rs
+
+</TabItem>
+
+<TabItem label="हिंदी">
+
+क्या तुमने समझते हैं कि AHQ Store खोला हैं? हम AHQ Store की सही खाद समझने की कोशिशे करें
+
+## AHQ Store Client
+
+AHQ Store Client (को कार्यान्वयन के रूप में ahqsoftwares/tauri-ahq-store) एक पूर्ण खोला गया कlient है जो हमारे AHQ Store एप्लिकेशन है। यह अनुप्रयोग शामिल है:
+
+- **src:** रिॅक्ट्स टाइप्स के रूप में लिखा हुआ है
+- **src-tauri:** रिॅक्ट के रूप में लिखा हुआ है, जो रिॅक्ट्स टाइप्स एप्लिकेशन को प्रस्तुतित करता है
+- **src-setup:** Windows और Linux के लिए AHQ Store का सेटअप को लिखा हुआ है जो रिॅक्ट के रूप में लिखा हुआ है
+- **src-service:** यह सेविस या डीमन है जो AHQ Store Client के साथ कॉन्ट्रोल करता है कि एप्लिकेशन को स्थानांतरित करना, और अपडेट करना करें
+
+## AHQ Store Types Package
+
+ahqstore-types पैकेज को शामिल करने के लिए ahqsoftwares/tauri-ahq-store का उपयोग करता है, जो AHQ Store और सेविस के लिए प्रयोग करता है। इसका दस्तावेज़ी प्रदर्शित करने के लिए https://docs.rs/ahqstore_types का उपयोग करें
+
+## AHQ Store CLI
+
+AHQ Store CLI खोला हुआ है https://github.com/ahqstore/cli और आप इस को स्थानांतरित कर सकते हैं
+
+📦 Crates.io: https://crates.io/crates/ahqstore_cli_rs
+
+</TabItem>
+
+</Tabs>

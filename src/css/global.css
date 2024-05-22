@@ -4,6 +4,7 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
 .site-title {
   @apply tw-max-h-[3.5rem];
 }

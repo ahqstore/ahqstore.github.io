@@ -36,7 +36,7 @@ export default defineConfig({
       lastUpdated: true,
       titleDelimiter: "-",
       locales: {
-        root: {
+        en: {
           label: "English",
           lang: "en",
         },
@@ -49,10 +49,13 @@ export default defineConfig({
           lang: "hi",
         },
       },
-      defaultLocale: "root",
+      defaultLocale: "en",
       logo: {
         src: "./src/assets/logo.png",
         replacesTitle: true,
+      },
+      components: {
+        LanguageSelect: "./src/components/lang.astro",
       },
       social: {
         "github": "https://github.com/ahqstore",
@@ -117,4 +120,11 @@ export default defineConfig({
       include: "./src/dash/*",
     }),
   ],
+  redirects: {
+    "/": "/en",
+    "/en/announcements/[...slug]": "/announcements/[...slug]?en",
+    "/es/announcements/[...slug]": "/announcements/[...slug]?es",
+    "/hi/announcements/[...slug]": "/announcements/[...slug]?hi",
+  },
+  output: "static",
 });

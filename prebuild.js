@@ -7,7 +7,8 @@ import { readdirSync, readFileSync, writeFileSync } from "fs";
     "/hi/announcements/[...slug]": "/announcements/[...slug]?hi",
 */
 
-let red = `"/": "/en",`;
+let red = `"/": "/en",
+    "/reference": "/en/reference",`;
 
 const file = readFileSync("./astro.config").toString();
 readdirSync("./src/content/docs/announcements")

@@ -2,7 +2,7 @@
 import type { Props } from "@astrojs/starlight/props";
 import Default from "@astrojs/starlight/components/LanguageSelect.astro";
 
-const isAnnouncements = Astro.props.slug === "announcements";
+const isAnnouncements = Astro.props.slug === "announcements" || Astro.props.slug === "download";
 ---
 
 <script>
@@ -15,7 +15,7 @@ const isAnnouncements = Astro.props.slug === "announcements";
   };
 
   // @ts-ignore
-  if (map[search]) {
+  if (map[search] && window.location.pathname.includes("announcements")) {
     // @ts-ignore
     const e = document.querySelector(`select[value="${window.location.pathname}"]`);
 

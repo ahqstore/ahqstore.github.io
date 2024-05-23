@@ -1,6 +1,23 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  animation: ahq-style normal 0.2s;
+  transition: all 0.1s;
+}
+
+@keyframes ahq-style {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 100%
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

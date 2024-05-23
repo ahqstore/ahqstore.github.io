@@ -122,6 +122,7 @@ export default defineConfig({
   ],
   redirects: {
     "/": "/en",
+    "/reference": "/en/reference",
     "/en/announcements/ahq-store": "/announcements/ahq-store?en",
     "/es/announcements/ahq-store": "/announcements/ahq-store?es",
     "/hi/announcements/ahq-store": "/announcements/ahq-store?hi",

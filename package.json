@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "node prebuild && astro dev",
+    "dev": "node prebuild && pnpm build && serve -d dist",
     "start": "astro dev",
     "prebuild": "node prebuild",
     "build": "astro build",

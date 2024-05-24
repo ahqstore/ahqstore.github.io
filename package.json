@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "node prebuild && astro dev",
-    "start": "astro dev",
+    "start": "node prebuild && astro dev",
     "prebuild": "node prebuild",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "node prebuild && astro preview",
     "astro": "astro"
   },
   "dependencies": {

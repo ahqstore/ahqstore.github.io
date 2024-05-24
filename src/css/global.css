@@ -1,7 +1,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*:not(div) {
   animation: ahq-style normal 0.2s;
   transition: all 0.1s;
 }
@@ -20,6 +20,28 @@
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.page-load {
+  @apply tw-absolute tw-h-[100vh] tw-w-screen tw-flex tw-flex-col tw-justify-center tw-text-center tw-items-center;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  z-index: 999999999999999999999999999999999999999999999999999999;
+  transition: none !important;
+  animation: none !important;
+  background: var(--astro-code-color-background);
+}
+
+.moved-header {
+  @apply tw-bg-transparent;
+}
+
+.page-load span {
+  @apply tw-dui-loading tw-dui-loading-spinner tw-w-[5vw];
+  transition: none !important;
+  animation: none !important;
 }
 
 .site-title {

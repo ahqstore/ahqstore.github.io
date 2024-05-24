@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from "fs";
+import { readdirSync, writeFileSync } from "fs";
 
 /*
 "/": "/en",
@@ -6,18 +6,33 @@ import { readdirSync, readFileSync, writeFileSync } from "fs";
     "/es/announcements/[...slug]": "/announcements/[...slug]?es",
     "/hi/announcements/[...slug]": "/announcements/[...slug]?hi",
 */
+const texts = {
+    hi: "लोड हो रहा है",
+    en: "Loading",
+    es: "Cargando"
+};
 
-let red = `"/": "/en",
-    "/reference": "/en/reference",`;
+const val = `---
+title: {ldr}
+template: splash
+---
 
-const file = readFileSync("./astro.config").toString();
-readdirSync("./src/content/docs/announcements")
-  .map((f) => f.split(".")[0])
-  .forEach((path) => {
-    red = `${red}
-    "/en/announcements/${path}": "/announcements/${path}?en",
-    "/es/announcements/${path}": "/announcements/${path}?es",
-    "/hi/announcements/${path}": "/announcements/${path}?hi",`;
+<meta http-equiv="refresh" content="0;url=/!@#pathname" />
+
+<div className="page-load">
+    <span />
+    <h2>{ldr}...</h2>
+</div>`
+
+const pages = readdirSync("./src/content/docs/announcements")
+  .map((f) => f.split(".")[0]);
+
+pages.push("index");
+
+pages.forEach((path) => {
+    ["en", "hi", "es"].forEach((lang) => {
+        const txt = texts[lang];
+
+        writeFileSync(`./src/content/docs/${lang}/announcements/${path}.mdx`, val.replace(/{ldr}/g, txt).replace("!@#pathname", path != "index" ? `announcements/${path}?${lang}` : "announcements"));
+    });
   });
-
-writeFileSync("./astro.config.mjs", file.replace("!@#%redirects$#@!", red));

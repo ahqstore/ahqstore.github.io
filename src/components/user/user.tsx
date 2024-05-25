@@ -32,7 +32,7 @@ export default function User(data: PubUser) {
 
       {
         data.linked_acc.length > 0 ? data.linked_acc.map((acc) => (
-          <a href={`https://github.com/${acc}`} key={acc}>
+          <a href={`https://github.com/${acc}`} target="_blank" key={acc}>
             <FaGithub />
             <span>@{acc}</span>
           </a>

@@ -22,7 +22,11 @@ export default function GetUser() {
   const [resp, setResp] = useState(<Loading />);
 
   useEffect(() => {
-    fetch(`https://astore.loophole.site/users/${id}`)
+    fetch(`https://possible-toad-preferably.ngrok-free.app/users/${id}`, {
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      }
+    })
       .then((d) => {
         if (!d.ok) {
           throw new Error("");

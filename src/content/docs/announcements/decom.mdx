@@ -1,0 +1,57 @@
+---
+title: Decommissioning of the servers and removal of storage of accounts
+date: 2024-06-11
+authors: ahq
+tags: [Announcement]
+excerpt: AHQ Store will no longer require account. We NO LONGER process/retain/store any data. The Account Implementation from v2.x.x will be made by gh device login and the access_token will be stored locally.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import App from "../../../dash/click";
+
+<App client:load />
+
+<Tabs>
+
+<TabItem label="English">
+
+Since the beginning of AHQ Store, it was our priority to protect user data. With that in mind, we're deciding to no longer involuntarily collect any data.
+
+## Sooo, What's changed
+The following are the key changes:
+- We no longer require an "AHQ Store Account"
+- You "may" login into "AHQ Store" using GitHub Device Flow, but we'll not collect any data and the access_token will be stored and processed locally
+- "Developers" who would contribute to the apps repo (https://github.com/ahqstore/apps) are required to voluntarily share the information as mentioned in the repo's README.md
+- The end users will no longer be required to use "AHQ Store Account" to login
+- We'll delete all the data that had been stored till now
+- Older versions of "AHQ Store" will cease to work
+
+</TabItem>
+
+<TabItem label="Español">
+Desde el inicio de AHQ Store, nuestra prioridad era proteger los datos de los usuarios. Teniendo esto en cuenta, decidimos no recopilar más datos de forma involuntaria.
+
+## Entonces, ¿qué ha cambiado?
+Los siguientes son los cambios clave:
+- Ya no requerimos una "Cuenta de tienda AHQ"
+- Usted "puede" iniciar sesión en la "Tienda AHQ" usando GitHub Device Flow, pero no recopilaremos ningún dato y el token de acceso se almacenará y procesará localmente.
+- Los "desarrolladores" que contribuirían al repositorio de aplicaciones (https://github.com/ahqstore/apps) deben compartir voluntariamente la información como se menciona en el archivo README.md del repositorio.
+- Los usuarios finales ya no tendrán que utilizar la "Cuenta de la tienda AHQ" para iniciar sesión.
+- Eliminaremos todos los datos que se habían almacenado hasta ahora.
+- Las versiones anteriores de "AHQ Store" dejarán de funcionar
+</TabItem>
+
+<TabItem label="हिंदी">
+AHQ स्टोर की शुरुआत से ही, उपयोगकर्ता डेटा की सुरक्षा करना हमारी प्राथमिकता रही है। इसे ध्यान में रखते हुए, हम अब अनैच्छिक रूप से कोई भी डेटा एकत्र नहीं करने का निर्णय ले रहे हैं।
+
+## तो, क्या बदला है?
+निम्नलिखित मुख्य परिवर्तन हैं:
+- हमें अब "AHQ स्टोर अकाउंट" की आवश्यकता नहीं है
+- आप GitHub डिवाइस फ़्लो का उपयोग करके "AHQ स्टोर" में लॉग इन कर सकते हैं, लेकिन हम कोई भी डेटा एकत्र नहीं करेंगे और access_token को स्थानीय रूप से संग्रहीत और संसाधित किया जाएगा
+- "डेवलपर्स" जो ऐप्स रेपो (https://github.com/ahqstore/apps) में योगदान देंगे, उन्हें रेपो के README.md में उल्लिखित जानकारी को स्वेच्छा से साझा करना आवश्यक है
+- अंतिम उपयोगकर्ताओं को अब लॉग इन करने के लिए "AHQ स्टोर अकाउंट" का उपयोग करने की आवश्यकता नहीं होगी
+- हम अब तक संग्रहीत सभी डेटा को हटा देंगे
+- "AHQ स्टोर" के पुराने संस्करण काम करना बंद कर देंगे
+</TabItem>
+
+</Tabs>

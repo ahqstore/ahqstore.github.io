@@ -15,10 +15,7 @@ const alpha: { name: string; browser_download_url: string }[] = await fetch(
   "https://api.github.com/repos/ahqsoftwares/tauri-ahq-store/releases"
 )
   .then((data) => data.json())
-  .then((d) => {
-    console.log(d);
-    return d;
-  })
+  .then((d) => d.filter((d: { prerelease: boolean }) => d.prerelease))
   .then((data) => data[0])
   .then((data) => data.assets);
 ---
@@ -31,7 +28,8 @@ const alpha: { name: string; browser_download_url: string }[] = await fetch(
   <LinkCard
     title="🚀 Download Setup"
     description="Download the Setup that automates the install (recommended)"
-    href={data.find(({ name }) => name.includes("setup"))?.browser_download_url}
+    href={data.find(({ name }) => name == "ahqstore_setup_win32_amd64.exe")
+      ?.browser_download_url}
   />
 
   <LinkCard
@@ -50,22 +48,22 @@ const alpha: { name: string; browser_download_url: string }[] = await fetch(
   <LinkCard
     title="🚀 Installer (dpkg)"
     description="Debian, Ubuntu, Kali Linux & other distros that have dpkg tooling (recommended)"
-    href={data.find(
-      ({ name }) => name.includes("linux") && name.includes("amd64")
-    )?.browser_download_url}
+    href={data.find(({ name }) => name == "ahqstore_setup_amd64_linux")
+      ?.browser_download_url}
   />
 
   <LinkCard
     title="🪲 Installer (dpkg)"
     description="Alpha version of the dpkg installer. Ideal for technical users who want to look at the new installer"
-    href={alpha.find(
-      ({ name }) => name.includes("linux") && name.includes("amd64")
-    )?.browser_download_url}
+    href={alpha.find(({ name }) => name == "ahqstore_setup_amd64_linux")
+      ?.browser_download_url}
   />
 </CardGrid>
 <h2 style="display: flex;">
   <Icon name="information" color="yellow" size="2rem" />
-  <span style="margin-left: 12px;">Other Linux (Read the guide to install daemon)</span>
+  <span style="margin-left: 12px;"
+    >Other Linux (Read the guide to install daemon)</span
+  >
 </h2>
 <h5 style="margin-left: 5px">(Ideal for technical users)</h5>
 <CardGrid>

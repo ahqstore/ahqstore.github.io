@@ -1,0 +1,19 @@
+---
+title: Ventana
+lastUpdated: true
+---
+
+import { Steps, Aside, Code } from "@astrojs/starlight/components"
+
+<Aside type="caution" title="Cuidado">
+Recomendamos encarecidamente que utilices el instalador proporcionado para instalar AHQ Store. Este método, por supuesto, ejecutará el `Instalador de AHQ Store` cuando haya una actualización disponible
+</Aside>
+
+<Steps>
+  1. Descarga el `.msi` y `ahqstore_service.exe` de [aquí](/download)
+  . <Aside title="¿Qué es x86_64 y arm64?">Si no estás utilizando un snapdragon, probablemente estás utilizando x86_64 (también conocido como amd64). Si no estás seguro, deberías utilizar la versión amd64, ya que arm64 puede simularlo</Aside>
+  2. Ejecuta el archivo `.msi` y realiza la instalación
+  3. Ahora, abre un terminal con privilegios elevados en la carpeta donde se encuentra `ahqstore_service.exe`
+  . <Code lang="ps1" code={'sc create AHQStore binpath="ruta del servicio" start=auto\nsc start AHQStore'} />
+  4. ¡Ya está! Abre el menú de inicio y ejecuta AHQ Store
+</Steps>

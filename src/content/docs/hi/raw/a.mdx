@@ -1,0 +1,20 @@
+---
+title: विंडोज
+lastUpdated: true
+---
+
+import { Steps, Aside, Code } from "@astrojs/starlight/components"
+
+<Aside type="caution" title="चेतावनी">
+हम अत्यधिक करते हैं कि आप दी गई इंस्टॉलर का उपयोग करके AHQ Store को स्थानांतरित करें। इस तरह का मेソड, सुनिश्चित करके, AHQ Store को अपडेट करने से पहले इंस्टॉलर एक्सेक्यूट करेगा
+</Aside>
+
+<Steps>
+  1. `ahqstore_service.exe` और `.msi` को [यहाँ](/download) डाउनलोड करें
+  . <Aside title="क्या है x86_64 और arm64?">यदि आप Snapdragon का उपयोग नहीं कर रहे हैं, तो अमेबी 64 का उपयोग कर रहे हैं (इसका अन्य नाम 'amd64' भी है). अगर आप नहीं कहते तो अमेबी 64 का उपयोग करें, क्योकि arm64 को छोड़कर कह सकते हैं</Aside>
+  2. `.msi` फ़ाइल को चलाएं और इंस्टॉल करें
+  3. `ahqstore_service.exe` की ओर से, अधिकार सङ्गेसित करके टरमिनल खोलें
+  . <Code lang="ps1" code={'sc create AHQStore binpath="सर्विस का पथ" start=auto\nsc start AHQStore'} />
+  4. अपने साथ में शुरू मेनू खोलें और AHQ Store को चलाएं
+</Steps>
+

@@ -2,5 +2,31 @@
 title: Introduction
 lastUpdated: true
 ---
+import { Icon, Emoji, LinkCard, CardGrid } from "@astrojs/starlight/components";
 
 AHQ Store provides you installers for supported and tested platforms, however some platforms binaries and provided by our GitHub Actions Runner that can be installed with a bit of expertise. Alternately you can directly build from source and use it.
+
+## Select your platform (Prebuilt)
+<CardGrid>
+  <div style="display:flex;flex-direction:column;">
+    <Icon name="seti:windows" size="2em" />
+    <LinkCard title="Windows 10/11 22H2 (x64/arm64)" description="Install AHQ Store manually via prebuilt binaries" href="/en/raw/a" />
+  </div>
+  <div style="display:flex;flex-direction:column;">
+    <Icon name="linux" size="2em" />
+    <LinkCard title="Debian Linux (x64/arm64)" description="Install AHQ Store manually via prebuilt binaries" href="/en/raw/b"  />
+  </div>
+  <div style="display:flex;flex-direction:column;">
+    <Icon name="linux" size="2em" />
+    <LinkCard title="Arch Linux (x64/arm64)" description="Install AHQ Store manually via prebuilt binaries" href="/en/raw/c" />
+  </div>
+    <div style="display:flex;flex-direction:column;">
+    <Icon name="linux" size="2em" />
+    <LinkCard title="Other Linux (x64/arm64)" description="Install AHQ Store manually via prebuilt binaries" href="/en/raw/d" />
+  </div>
+</CardGrid>
+
+## Build from Repo / Something else?
+
+<Icon name="laptop" size="2em" />
+<LinkCard title="Build from source" description="Build AHQ Store from source" href="/en/raw/e" />

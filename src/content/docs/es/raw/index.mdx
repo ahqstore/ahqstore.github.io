@@ -1,0 +1,32 @@
+---
+title: Introducción
+lastUpdated: true
+---
+import { Icon, Emoji, LinkCard, CardGrid } from "@astrojs/starlight/components";
+
+AHQ Store proporciona instaladores para plataformas compatibles y probadas, sin embargo, algunos binarios pueden ser proporcionados por nuestro ejecutor de GitHub Actions, lo cual requiere un poco de experiencia. Alternativamente puedes construirlo desde el código fuente y usarlo.
+
+## Selecciona tu plataforma (Preconstruido)
+<CardGrid>
+  <div style="display:flex;flex-direction:column;">
+    <Icon name="seti:windows" size="2em" />
+    <LinkCard title="Windows 10/11 22H2 (x64/arm64)" description="Instala AHQ Store de forma manual a través de binarios preconstruidos" href="/es/raw/a" />
+  </div>
+  <div style="display:flex;flex-direction:column;">
+    <Icon name="linux" size="2em" />
+    <LinkCard title="Linux Debian (x64/arm64)" description="Instala AHQ Store de forma manual a través de binarios preconstruidos" href="/es/raw/b"  />
+  </div>
+  <div style="display:flex;flex-direction:column;">
+    <Icon name="linux" size="2em" />
+    <LinkCard title="Linux Arch (x64/arm64)" description="Instala AHQ Store de forma manual a través de binarios preconstruidos" href="/es/raw/c" />
+  </div>
+    <div style="display:flex;flex-direction:column;">
+    <Icon name="linux" size="2em" />
+    <LinkCard title="Otra Linux (x64/arm64)" description="Instala AHQ Store de forma manual a través de binarios preconstruidos" href="/es/raw/d" />
+  </div>
+</CardGrid>
+
+## Construye desde el repositorio / Algo más?
+
+<Icon name="laptop" size="2em" />
+<LinkCard title="Construye desde el código fuente" description="Construye AHQ Store desde el código fuente" href="/es/raw/e" />

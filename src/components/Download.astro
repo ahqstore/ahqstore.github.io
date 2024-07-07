@@ -38,7 +38,7 @@ const alpha = preReleaseInfo?.assets || [];
   Stable: v<strong>{releaseInfo.tag_name}</strong>
 </h5>
 <h5 style="margin-top:0;font-weight: normal;">
-  Pre-Release: v<strong>{preReleaseInfo.tag_name}</strong>
+  Pre-Release: <strong>{preReleaseInfo.tag_name}</strong>
 </h5>
 
 <div style="display:flex;">
@@ -139,7 +139,7 @@ const alpha = preReleaseInfo?.assets || [];
     data.map(({ name, browser_download_url }) => (
       <LinkCard
         title={name}
-        description={`v${releaseInfo.tag_name}`}
+        description={`v${releaseInfo.tag_name} (Release Branch: Main Release)`}
         href={browser_download_url}
       />
     ))
@@ -152,7 +152,7 @@ const alpha = preReleaseInfo?.assets || [];
     alpha.map(({ name, browser_download_url }) => (
       <LinkCard
         title={name}
-        description={`v${preReleaseInfo.tag_name}`}
+        description={`${preReleaseInfo.tag_name} (Release Branch: Pre Release)`}
         href={browser_download_url}
       />
     ))

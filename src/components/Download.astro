@@ -9,87 +9,125 @@ const data: { name: string; browser_download_url: string }[] = await fetch(
     console.log(d);
     return d;
   })
-  .then((data) => data.assets);
+  .then((data) => data?.assets || []);
 
 const alpha: { name: string; browser_download_url: string }[] = await fetch(
   "https://api.github.com/repos/ahqsoftwares/tauri-ahq-store/releases"
 )
   .then((data) => data.json())
-  .then((d) => d.filter((d: { prerelease: boolean }) => d.prerelease))
-  .then((data) => data[0])
+  .then((d) =>
+    d.filter ? d.filter((d: { prerelease: boolean }) => d.prerelease) : []
+  )
+  .then((data) => data[0] || { assets: [] })
   .then((data) => data.assets);
 ---
 
-<h2 style="display: flex;">
-  <Icon name="seti:windows" color="blue" size="2rem" />
-  <span style="margin-left: 12px;">Windows 10/11</span>
-</h2>
-<CardGrid>
-  <LinkCard
-    title="🚀 Download Setup"
-    description="Download the Setup that automates the install (recommended)"
-    href={data.find(({ name }) => name == "ahqstore_setup_win32_amd64.exe")
-      ?.browser_download_url}
-  />
+<div style="display:flex;">
+  <div style="margin-right:1rem;">
+    <h2 style="display: flex;">
+      <Icon name="seti:windows" color="blue" size="2rem" />
+      <span style="margin-left: 12px;">Windows (x64)</span>
+    </h2>
+    <LinkCard
+      title="🚀 Download Setup"
+      description="Download the Setup that automates the install (recommended)"
+      href={data.find(({ name }) => name == "ahqstore_setup_win32_amd64.exe")
+        ?.browser_download_url}
+    />
 
-  <LinkCard
-    title="🪲 Download Alpha Setup"
-    description="Download the Alpha Version of setup. Ideal for highly technical users"
-    href={alpha.find(({ name }) => name == "ahqstore_setup_win32_amd64.exe")
-      ?.browser_download_url}
-  />
+    <LinkCard
+      title="🪲 Download Alpha Setup"
+      description="Download the Alpha Version of setup. Ideal for highly technical users"
+      href={alpha.find(({ name }) => name == "ahqstore_setup_win32_amd64.exe")
+        ?.browser_download_url}
+    />
+  </div>
+
+  <div style="margin-top:0;">
+    <h2 style="display: flex;">
+      <Icon name="seti:windows" color="blue" size="2rem" />
+      <span style="margin-left: 12px;">Windows (arm64)</span>
+    </h2>
+    <LinkCard
+      title="🚀 Download Setup"
+      description="Download the Setup that automates the install (recommended)"
+      href={data.find(({ name }) => name == "ahqstore_setup_win32_arm64.exe")
+        ?.browser_download_url}
+    />
+
+    <LinkCard
+      title="🪲 Download Alpha Setup"
+      description="Download the Alpha Version of setup. Ideal for highly technical users"
+      href={alpha.find(({ name }) => name == "ahqstore_setup_win32_arm64.exe")
+        ?.browser_download_url}
+    />
+  </div>
+</div>
+
+<div style="display:flex;margin-top:3rem;">
+  <div style="margin-right:1rem;">
+    <h2 style="display: flex;">
+      <Icon name="linux" size="2rem" />
+      <span style="margin-left: 12px;">Debian Linux (x64)</span>
+    </h2>
+    <LinkCard
+      title="🚀 Installer (dpkg)"
+      description="Debian, Ubuntu, Kali Linux & other distros that have dpkg tooling (recommended)"
+      href={data.find(({ name }) => name == "ahqstore_setup_amd64_linux")
+        ?.browser_download_url}
+    />
+
+    <LinkCard
+      title="🪲 Installer (dpkg)"
+      description="Alpha version of the dpkg installer. Ideal for technical users who want to look at the new installer"
+      href={alpha.find(({ name }) => name == "ahqstore_setup_amd64_linux")
+        ?.browser_download_url}
+    />
+  </div>
+  <div style="margin-top:0;">
+    <h2 style="display: flex;">
+      <Icon name="linux" size="2rem" />
+      <span style="margin-left: 12px;">Debian Based Linux (arm64)</span>
+    </h2>
+    <LinkCard
+      title="🚀 Installer (dpkg)"
+      description="Debian, Ubuntu, Kali Linux & other distros that have dpkg tooling (recommended)"
+      href={data.find(({ name }) => name == "ahqstore_setup_arm64_linux")
+        ?.browser_download_url}
+    />
+
+    <LinkCard
+      title="🪲 Installer (dpkg)"
+      description="Alpha version of the dpkg installer. Ideal for technical users who want to look at the new installer"
+      href={alpha.find(({ name }) => name == "ahqstore_setup_arm64_linux")
+        ?.browser_download_url}
+    />
+  </div>
+</div>
+
+<h1 style="display: flex;">
+  <Icon name="information" size="2rem" />
+  <span style="margin-left: 12px;">Raw Artifacts</span>
+</h1>
+<span>
+  Read the guide on installing via raw files
+  <a href="/en/raw">here</a>
+</span>
+
+<h3 style="margin-top:1rem;">💾 Stable Files</h3>
+<CardGrid>
+  {
+    data.map(({ name, browser_download_url }) => (
+      <LinkCard title={name} href={browser_download_url} />
+    ))
+  }
 </CardGrid>
 
-<h2 style="display: flex;">
-  <Icon name="laptop" size="2rem" />
-  <span style="margin-left: 12px;">Debian Linux</span>
-</h2>
+<h3>💿 Prerelease Files</h3>
 <CardGrid>
-  <LinkCard
-    title="🚀 Installer (dpkg)"
-    description="Debian, Ubuntu, Kali Linux & other distros that have dpkg tooling (recommended)"
-    href={data.find(({ name }) => name == "ahqstore_setup_amd64_linux")
-      ?.browser_download_url}
-  />
-
-  <LinkCard
-    title="🪲 Installer (dpkg)"
-    description="Alpha version of the dpkg installer. Ideal for technical users who want to look at the new installer"
-    href={alpha.find(({ name }) => name == "ahqstore_setup_amd64_linux")
-      ?.browser_download_url}
-  />
-</CardGrid>
-<h2 style="display: flex;">
-  <Icon name="information" color="yellow" size="2rem" />
-  <span style="margin-left: 12px;"
-    >Other Linux (Read the guide to install daemon)</span
-  >
-</h2>
-<h5 style="margin-left: 5px">(Ideal for technical users)</h5>
-<CardGrid>
-  <LinkCard
-    title="📦 Debian Binary (.deb)"
-    description="Debian, Ubuntu, Kali Linux & other  (recommended)"
-    href={data.find(({ name }) => name.endsWith(".deb"))?.browser_download_url}
-  />
-
-  <LinkCard
-    title="📀 Download AppImage"
-    description="Arch, Fedora & almost all other distros"
-    href={data.find(({ name }) => name.endsWith(".AppImage"))
-      ?.browser_download_url}
-  />
-
-  <LinkCard
-    title="🪲 Debian Binary (.deb; Alpha)"
-    description="Debian, Ubuntu, Kali Linux & other"
-    href={alpha.find(({ name }) => name.endsWith(".deb"))?.browser_download_url}
-  />
-
-  <LinkCard
-    title="🪲 Download AppImage (Alpha)"
-    description="Arch, Fedora & almost all other distros"
-    href={alpha.find(({ name }) => name.endsWith(".AppImage"))
-      ?.browser_download_url}
-  />
+  {
+    alpha.map(({ name, browser_download_url }) => (
+      <LinkCard title={name} href={browser_download_url} />
+    ))
+  }
 </CardGrid>

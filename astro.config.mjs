@@ -70,6 +70,17 @@ export default defineConfig({
       },
       sidebar: [
         {
+          label: "Building AHQ Store Manually",
+          translations: {
+            hi: "AHQ Store को खुद से निर्माण करें",
+            es: "Construyendo AHQ Store manualmente",
+          },
+          autogenerate: {
+            directory: "raw",
+          },
+          collapsed: true,
+        },
+        {
           label: "Framework Guides",
           translations: {
             hi: "फ्रेमवर्क गाइड",

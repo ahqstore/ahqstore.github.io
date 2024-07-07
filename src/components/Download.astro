@@ -1,26 +1,45 @@
 ---
 import { Icon, LinkCard, CardGrid } from "@astrojs/starlight/components";
 
-const data: { name: string; browser_download_url: string }[] = await fetch(
+const releaseInfo: {
+  tag_name: string;
+  assets: { name: string; browser_download_url: string }[];
+} = await fetch(
   "https://api.github.com/repos/ahqsoftwares/tauri-ahq-store/releases/latest"
 )
   .then((data) => data.json())
   .then((d) => {
     console.log(d);
     return d;
-  })
-  .then((data) => data?.assets || []);
+  });
 
-const alpha: { name: string; browser_download_url: string }[] = await fetch(
+const data = releaseInfo?.assets || [];
+
+const preReleaseInfo: {
+  tag_name: string;
+  assets: { name: string; browser_download_url: string }[];
+} = await fetch(
   "https://api.github.com/repos/ahqsoftwares/tauri-ahq-store/releases"
 )
   .then((data) => data.json())
   .then((d) =>
     d.filter ? d.filter((d: { prerelease: boolean }) => d.prerelease) : []
   )
-  .then((data) => data[0] || { assets: [] })
-  .then((data) => data.assets);
+  .then((data) => data[0] || { tag_name: "unknown", assets: [] });
+
+const alpha = preReleaseInfo?.assets || [];
 ---
+
+<h3 style="display:flex;">
+  <Icon name="pencil" size="2rem" />
+  <span style="margin-left:12px;">Versions</span>
+</h3>
+<h5 style="font-weight: normal;">
+  Stable: v<strong>{releaseInfo.tag_name}</strong>
+</h5>
+<h5 style="margin-top:0;font-weight: normal;">
+  Pre-Release: v<strong>{preReleaseInfo.tag_name}</strong>
+</h5>
 
 <div style="display:flex;">
   <div style="margin-right:1rem;">
@@ -73,14 +92,14 @@ const alpha: { name: string; browser_download_url: string }[] = await fetch(
     <LinkCard
       title="🚀 Installer (dpkg)"
       description="Debian, Ubuntu, Kali Linux & other distros that have dpkg tooling (recommended)"
-      href={data.find(({ name }) => name == "ahqstore_setup_amd64_linux")
+      href={data.find(({ name }) => name == "ahqstore_setup_linux_amd64")
         ?.browser_download_url}
     />
 
     <LinkCard
       title="🪲 Installer (dpkg)"
       description="Alpha version of the dpkg installer. Ideal for technical users who want to look at the new installer"
-      href={alpha.find(({ name }) => name == "ahqstore_setup_amd64_linux")
+      href={alpha.find(({ name }) => name == "ahqstore_setup_linux_amd64")
         ?.browser_download_url}
     />
   </div>
@@ -92,14 +111,14 @@ const alpha: { name: string; browser_download_url: string }[] = await fetch(
     <LinkCard
       title="🚀 Installer (dpkg)"
       description="Debian, Ubuntu, Kali Linux & other distros that have dpkg tooling (recommended)"
-      href={data.find(({ name }) => name == "ahqstore_setup_arm64_linux")
+      href={data.find(({ name }) => name == "ahqstore_setup_linux_arm64")
         ?.browser_download_url}
     />
 
     <LinkCard
       title="🪲 Installer (dpkg)"
       description="Alpha version of the dpkg installer. Ideal for technical users who want to look at the new installer"
-      href={alpha.find(({ name }) => name == "ahqstore_setup_arm64_linux")
+      href={alpha.find(({ name }) => name == "ahqstore_setup_linux_arm64")
         ?.browser_download_url}
     />
   </div>
@@ -118,7 +137,11 @@ const alpha: { name: string; browser_download_url: string }[] = await fetch(
 <CardGrid>
   {
     data.map(({ name, browser_download_url }) => (
-      <LinkCard title={name} href={browser_download_url} />
+      <LinkCard
+        title={name}
+        description={`v${releaseInfo.tag_name}`}
+        href={browser_download_url}
+      />
     ))
   }
 </CardGrid>
@@ -127,7 +150,11 @@ const alpha: { name: string; browser_download_url: string }[] = await fetch(
 <CardGrid>
   {
     alpha.map(({ name, browser_download_url }) => (
-      <LinkCard title={name} href={browser_download_url} />
+      <LinkCard
+        title={name}
+        description={`v${preReleaseInfo.tag_name}`}
+        href={browser_download_url}
+      />
     ))
   }
 </CardGrid>

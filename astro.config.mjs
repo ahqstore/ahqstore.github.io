@@ -87,7 +87,7 @@ export default defineConfig({
             es: "Guía de Frameworks",
           },
           badge: {
-            text: "v2 Alpha",
+            text: "v2",
             variant: "danger",
           },
           autogenerate: {
@@ -102,7 +102,7 @@ export default defineConfig({
             es: "Desarrolladores",
           },
           badge: {
-            text: "v2 Alpha",
+            text: "v2",
             variant: "danger",
           },
           autogenerate: {

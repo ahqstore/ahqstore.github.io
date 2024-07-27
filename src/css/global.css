@@ -63,3 +63,11 @@
 .download-btn {
   @apply tw-dui-btn tw-border-none tw-rounded-lg tw-bg-purple-700 hover:tw-bg-purple-800 tw-text-white tw-w-full !important;
 }
+
+ol[role="list"] li {
+  @apply tw-my-5;
+}
+
+pre[data-language="sh"] div[class="code"]::before {
+  content: "$ ";
+}

@@ -1,0 +1,43 @@
+---
+title: CLI Guide
+lastUpdated: true
+---
+
+import { Steps, Code, Tabs, TabItem } from "@astrojs/starlight/components"
+
+### Install the CLI (NodeJS)
+<Steps>
+  1. Install [NodeJS](https://nodejs.org/)
+  2. Install your package manager
+  .  <Tabs syncKey="pkg"> <TabItem label="npm"> <Code lang="sh" code="npm i -g npm"/> </TabItem> <TabItem label="yarn classic"> <Code lang="sh" code="npm i -g yarn"/> </TabItem> <TabItem label="yarn berry"> <Code lang="sh" code="npm i -g yarn; yarn version set berry"/> </TabItem> <TabItem label="pnpm"> <Code lang="sh" code="npm i -g pnpm"/> </TabItem> </Tabs>
+</Steps>
+<Tabs syncKey="pkg">
+  <TabItem label="npm">
+    ```sh
+    npm i -g @ahqstore/cli
+    ```
+  </TabItem>
+  <TabItem label="yarn classic">
+    ```sh
+    yarn global add @ahqstore/cli
+    ```
+  </TabItem>
+  <TabItem label="yarn berry">
+    ```sh
+    yarn global add @ahqstore/cli
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh
+    pnpm add -g @ahqstore/cli
+    ```
+  </TabItem>
+</Tabs>
+
+### Install the CLI (cargo)
+<Steps>
+1. Install [Rust](https://rust-lang.org)
+2. <Tabs> <TabItem label="Install Using Cargo"> <Code lang="sh" code="cargo install ahqstore_cli_rs"/> </TabItem> <TabItem label="Install Using Cargo binstall"> <Code lang="sh" code={"cargo install cargo-binstall\ncargo binstall ahqstore_cli_rs"} /> </TabItem> </Tabs>
+3. Initialize 
+. <Code lang="sh" code="ahqstore" />
+</Steps>

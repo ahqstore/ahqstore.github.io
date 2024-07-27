@@ -70,10 +70,10 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: "Building AHQ Store Manually",
+          label: "Get AHQ Store Manually",
           translations: {
-            hi: "AHQ Store को खुद से निर्माण करें",
-            es: "Construyendo AHQ Store manualmente",
+            hi: "AHQ Store प्राप्त करें",
+            es: "Get AHQ Store",
           },
           autogenerate: {
             directory: "raw",

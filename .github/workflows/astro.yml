@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
   schedule:
-    - cron: '0 * * * *'
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -38,18 +38,26 @@ jobs:
         run: npm i -g pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm install
+          cd classic_docs
+          pnpm install
+          cd ..
         working-directory: ${{ env.BUILD_PATH }}
 
-      - name: Build with Astro
+      - name: Build
         run: |
           pnpm build
+          cd classic_docs
+          pnpm install
+          cd ..
+          pnpm postbuild
         working-directory: ${{ env.BUILD_PATH }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/dist
+          path: ${{ env.BUILD_PATH }}/doc_build
 
   deploy:
     environment:

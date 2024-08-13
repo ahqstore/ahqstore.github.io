@@ -40,18 +40,11 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install
-          cd classic_docs
-          pnpm install
-          cd ..
         working-directory: ${{ env.BUILD_PATH }}
 
       - name: Build
         run: |
           pnpm build
-          cd classic_docs
-          pnpm build
-          cd ..
-          pnpm finalize
         working-directory: ${{ env.BUILD_PATH }}
 
       - name: Upload artifact

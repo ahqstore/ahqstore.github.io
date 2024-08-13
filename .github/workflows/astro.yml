@@ -49,7 +49,7 @@ jobs:
         run: |
           pnpm build
           cd classic_docs
-          pnpm install
+          pnpm build
           cd ..
           pnpm finalize
         working-directory: ${{ env.BUILD_PATH }}

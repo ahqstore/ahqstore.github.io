@@ -51,7 +51,7 @@ jobs:
           cd classic_docs
           pnpm install
           cd ..
-          pnpm postbuild
+          pnpm finalize
         working-directory: ${{ env.BUILD_PATH }}
 
       - name: Upload artifact

@@ -7,9 +7,9 @@ import { readdirSync, writeFileSync } from "fs";
     "/hi/announcements/[...slug]": "/announcements/[...slug]?hi",
 */
 const texts = {
-    hi: "लोड हो रहा है",
-    en: "Loading",
-    es: "Cargando"
+  hi: "लोड हो रहा है",
+  en: "Loading",
+  es: "Cargando",
 };
 
 const val = `---
@@ -17,22 +17,31 @@ title: {ldr}
 template: splash
 ---
 
-<meta http-equiv="refresh" content="0;url=/!@#pathname" />
+<meta http-equiv="refresh" content="0;url=/v1/!@#pathname" />
 
 <div className="page-load">
     <span />
     <h2>{ldr}...</h2>
-</div>`
+</div>`;
 
-const pages = readdirSync("./src/content/docs/announcements")
-  .map((f) => f.split(".")[0]);
+const pages = readdirSync("./src/content/docs/announcements").map(
+  (f) => f.split(".")[0]
+);
 
 pages.push("index");
 
 pages.forEach((path) => {
-    ["en", "hi", "es"].forEach((lang) => {
-        const txt = texts[lang];
+  ["en", "hi", "es"].forEach((lang) => {
+    const txt = texts[lang];
 
-        writeFileSync(`./src/content/docs/${lang}/announcements/${path}.mdx`, val.replace(/{ldr}/g, txt).replace("!@#pathname", path != "index" ? `announcements/${path}?${lang}` : "announcements"));
-    });
+    writeFileSync(
+      `./src/content/docs/${lang}/announcements/${path}.mdx`,
+      val
+        .replace(/{ldr}/g, txt)
+        .replace(
+          "!@#pathname",
+          path != "index" ? `announcements/${path}?${lang}` : "announcements"
+        )
+    );
   });
+});

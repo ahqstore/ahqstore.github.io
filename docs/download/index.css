@@ -19,7 +19,7 @@
 }
 
 .dwn-page .black {
-  @apply tw-bg-[var(--rp-c-bg-mute)] tw-text-white tw-shadow-md;
+  @apply tw-bg-[var(--rp-c-bg-mute)] tw-text-[var(--pc-c-text-1)] tw-shadow-md;
 }
 
 .dwn-page button span,

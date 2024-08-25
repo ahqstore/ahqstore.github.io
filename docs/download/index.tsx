@@ -142,6 +142,19 @@ export default function Download() {
             </div>
           </div>
 
+          <div className="downloads">
+            <div>
+              <h3>
+                <AiFillAndroid className="rounded-sm" size="2rem" color="#37ab6f" />
+                <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Android</span>
+              </h3>
+              <section>
+                <button>Download Stable Setup</button>
+                <button>Download Alpha Setup</button>
+              </section>
+            </div>
+          </div>
+
           <div className="tw-flex">
             <h3 className="design">
               <FaPencil size="2rem" />

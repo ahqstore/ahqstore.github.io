@@ -5,15 +5,15 @@ import Err from "./error";
 import User from "./user";
 
 interface PubUser {
-  ahq_verified: boolean,
-  dev: boolean,
-  dis_acc: boolean,
-  display_name: string,
-  linked_acc: string[],
-  pf_pic?: string,
-  pub_email?: string,
-  u_id: number,
-  username?: string
+  ahq_verified: boolean;
+  dev: boolean;
+  dis_acc: boolean;
+  display_name: string;
+  linked_acc: string[];
+  pf_pic?: string;
+  pub_email?: string;
+  u_id: number;
+  username?: string;
 }
 
 export default function GetUser() {
@@ -24,8 +24,8 @@ export default function GetUser() {
   useEffect(() => {
     fetch(`https://possible-toad-preferably.ngrok-free.app/users/${id}`, {
       headers: {
-        "ngrok-skip-browser-warning": "true"
-      }
+        "ngrok-skip-browser-warning": "true",
+      },
     })
       .then((d) => {
         if (!d.ok) {
@@ -39,9 +39,7 @@ export default function GetUser() {
       .catch((_) => setResp(<Err />));
   }, []);
 
-  return <>
-    {resp}
-  </>;
+  return <>{resp}</>;
 }
 
-export type { PubUser }
+export type { PubUser };

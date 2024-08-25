@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=New+Amsterdam&display=swap');
+
+.dwn-page {
+  @apply tw-px-10 tw-mt-3 tw-w-full;
+}
+
+.dwn-page button,
+.dwn-page .button {
+  @apply tw-p-5 tw-px-9 tw-rounded-xl tw-flex lg:tw-text-lg;
+  @apply tw-bg-white tw-text-black tw-shadow-md;
+}
+
+.dwn-page .win {
+  @apply tw-bg-[#2602c3] tw-text-white tw-shadow-md;
+}
+
+.dwn-page .andy {
+  @apply tw-bg-[#2a764f] tw-text-white tw-shadow-md;
+}
+
+.dwn-page .black {
+  @apply tw-bg-[var(--rp-c-bg-mute)] tw-text-white tw-shadow-md;
+}
+
+.dwn-page button span,
+.dwn-page .button .span {
+  @apply tw-ml-1 lg:tw-ml-3 tw-font-bold tw-text-lg lg:tw-text-3xl tw-font-sans;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.dwn-page .design {
+  @apply tw-flex tw-items-center tw-bg-[var(--rp-c-bg-mute)] tw-border-[1px] tw-border-[var(--rp-c-text-3)];
+  @apply tw-py-2 tw-px-4 tw-rounded-xl;
+}
+
+.downloads {
+  @apply tw-flex tw-flex-col lg:tw-flex-row tw-mb-2 tw-w-full tw-space-y-2 lg:tw-space-y-0 lg:tw-space-x-5;
+}
+
+.downloads div {
+  @apply tw-w-full tw-flex tw-flex-col;
+}
+
+.downloads div h3 {
+  @apply design;
+}
+
+.downloads section {
+  @apply tw-flex tw-space-x-2;
+}
+
+.downloads section button {
+  @apply black tw-mt-2 tw-text-center tw-w-full lg:tw-w-auto;
+}

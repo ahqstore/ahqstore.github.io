@@ -1,3 +1,6 @@
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 :root {
   --rp-c-brand: #c95775;
   --rp-c-brand-dark: #5a3746;
@@ -6,4 +9,47 @@
   --rp-c-brand-lighter: #dea3a9;
 
   --rp-home-hero-name-background: -webkit-linear-gradient(120deg, var(--rp-c-brand) 30%, #dc975e);
+}
+
+.rspress-home-feature-detail {
+  text-align: center;
+}
+
+*:not(div) {
+  animation: ahq-style normal 0.2s;
+  transition: all 0.1s;
+}
+
+@keyframes ahq-style {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 100%
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.page-load {
+  @apply tw-absolute tw-h-[100vh] tw-w-screen tw-flex tw-flex-col tw-justify-center tw-text-center tw-text-2xl tw-items-center;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  z-index: 999999999999999999999999999999999999999999999999999999;
+  transition: none !important;
+  animation: none !important;
+  background: var(--astro-code-color-background);
+}
+
+.page-load span {
+  @apply tw-dui-loading tw-dui-loading-spinner tw-w-[5vw] tw-mb-5;
+  transition: none !important;
+  animation: none !important;
 }

@@ -1,0 +1,44 @@
+---
+title: Dropping support for Windows 7 and 8.1
+date: 2024-01-31
+authors: ahq
+tags: [Announcement]
+excerpt: We're dropping the support for Windows 7 and 8.1
+---
+As you would already know that AHQ Store didn't really supported Windows 7 & 8.1 that well, we've decided to drop support of it altogether.
+
+There's really not much to say here either. Still following are some reasons:
+
+### Microsoft Edge and WebView2 ending support for Windows 7 and Windows 8/8.1
+
+:::tip Source
+  [Microsoft](https://blogs.windows.com/msedgedev/2022/12/09/microsoft-edge-and-webview2-ending-support-for-windows-7-and-windows-8-8-1)
+:::
+> - To get new versions of Microsoft Edge or the WebView2 Runtime with up-to-date
+functionality and security, please upgrade to Windows 10 or later. > - We also encourage
+developers to end support for Windows 7 and Windows 8/8.1. We acknowledge that this
+may not be easy for some developers to do, however ending support for these operating
+systems will help keep end users safe from potential security threats and risks as
+both operating systems go out of support on January 10th, 2023.
+
+### Windows support schedule 2024 (Rust Lang Compiler Team)
+
+:::tip Source
+  [Rust Lang - Compiler Team - Issue 651 -
+  GitHub](https://github.com/rust-lang/compiler-team/issues/651)
+:::
+> - Currently Windows 7 and 8 are listed as Tier 1 supported platforms. However,
+this has not been true for a long long time. We simply do not have the testing infrastructure.
+And with so much software now abandoning Windows 7 and 8 (everything from Git to
+Go to every major browser), continuing to provide the little support that we do is
+only getting more difficult. There is also a lack of vendor support for these targets.
+> - This proposal aims to raise the minimum supported Windows version of current
+targets to Windows 10 (first released in 2015) during 2024. But it also leaves open
+the door for new targets that can commit to broader support, By having a separate
+target we can ensure there are people specifically tasked with supporting legacy
+versions of Windows. > > **Proposal** > - Rust 1.75 will be the last to officially
+support Windows 7, 8 and 8.1. Support for Windows versions before 10 will end in
+February 2024 with Rust 1.76. > - Support for Windows 7 and 8 may continue beyond
+these dates through the creation of new "legacy" targets for older Windows versions.
+Individuals or organisation(s) who can commit to providing some level of legacy testing
+and support should go through the normal process for creating new targets.

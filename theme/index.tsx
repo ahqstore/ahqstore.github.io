@@ -1,18 +1,10 @@
-import Theme from 'rspress/theme';
-import { HomeLayout as BasicHomeLayout } from 'rspress/theme';
-import { ToolStack } from './components/ToolStack';
-import './index.css';
+import Theme from "rspress/theme";
+import { HomeLayout as BasicHomeLayout } from "rspress/theme";
+import { ToolStack } from "./components/ToolStack";
+import "./index.css";
 
 function HomeLayout() {
-  return (
-    <BasicHomeLayout
-      afterFeatures={
-        <>
-          <ToolStack />
-        </>
-      }
-    />
-  );
+  return <BasicHomeLayout />;
 }
 
 export default {
@@ -20,4 +12,4 @@ export default {
   HomeLayout,
 };
 
-export * from 'rspress/theme';
+export * from "rspress/theme";

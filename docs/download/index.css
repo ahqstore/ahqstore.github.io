@@ -28,6 +28,28 @@
   font-family: "Barlow Condensed", sans-serif;
 }
 
+.dwn-page button:focus {
+  animation: normal 0.5s focus-btn;
+}
+
+@keyframes focus-btn {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.85);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .dwn-page .design {
   @apply tw-flex tw-items-center tw-bg-[var(--rp-c-bg-mute)] tw-border-[1px] tw-border-[var(--rp-c-text-3)];
   @apply tw-py-2 tw-px-4 tw-rounded-xl;
@@ -46,7 +68,7 @@
 }
 
 .downloads section {
-  @apply tw-flex tw-space-x-2;
+  @apply tw-flex tw-space-x-5;
 }
 
 .downloads section button {

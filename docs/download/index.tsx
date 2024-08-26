@@ -2,7 +2,7 @@ import "./index.css";
 import { ToolStack } from "../../theme/components/ToolStack";
 import { useEffect, useMemo, useState } from "react";
 
-import { FaPencil, FaArrowDown } from "react-icons/fa6";
+import { FaPencil, FaArrowDown, FaWrench } from "react-icons/fa6";
 import { SiLinux, SiWindows11 } from "react-icons/si";
 import { AiFillAndroid } from "react-icons/ai";
 
@@ -153,6 +153,15 @@ export default function Download() {
                 <button>Download Alpha Setup</button>
               </section>
             </div>
+            <div>
+              <h3>
+                <FaWrench size="1.8rem" color="var(--rp-c-text-1)" />
+                <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Build from source</span>
+              </h3>
+              <section>
+                <button>Read the guide</button>
+              </section>
+            </div>
           </div>
 
           <div className="tw-flex">
@@ -163,6 +172,11 @@ export default function Download() {
           </div>
           <div className="tw-flex tw-mt-2 tw-mb-6">
             <h5 id="other" className="button font-normal black tw-flex tw-flex-col">
+              <strong>Desktop</strong>
+              <span>Stable: v<strong>{release.tag_name}</strong></span>
+              <span>Pre-Release: <strong>{preRelease.tag_name}</strong></span>
+
+              <strong>Mobile</strong>
               <span>Stable: v<strong>{release.tag_name}</strong></span>
               <span>Pre-Release: <strong>{preRelease.tag_name}</strong></span>
             </h5>

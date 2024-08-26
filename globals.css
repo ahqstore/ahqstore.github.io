@@ -11,11 +11,15 @@
   --rp-home-hero-name-background: -webkit-linear-gradient(120deg, var(--rp-c-brand) 30%, #dc975e);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .rspress-home-feature-detail {
   text-align: center;
 }
 
-*:not(div) {
+*:not(div):not(button) {
   animation: ahq-style normal 0.2s;
   transition: all 0.1s;
 }

@@ -1,3 +1,3 @@
-export function fetchData() {
+export default function fetchData() {
 
 }

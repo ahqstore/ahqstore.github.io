@@ -26,9 +26,16 @@
 .dwn-page .button .span {
   @apply tw-ml-1 lg:tw-ml-3 tw-font-bold tw-text-lg lg:tw-text-3xl tw-font-sans;
   font-family: "Barlow Condensed", sans-serif;
+  transition: all 125ms linear;
+}
+
+.dwn-page button:hover {
+  transition: all 125ms linear;
+  transform: scale(1.05);
 }
 
 .dwn-page button:focus {
+  transition: all 125ms linear;
   animation: normal 0.5s focus-btn;
 }
 
@@ -43,10 +50,6 @@
 
   75% {
     transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1);
   }
 }
 
@@ -68,7 +71,7 @@
 }
 
 .downloads section {
-  @apply tw-flex tw-space-x-5;
+  @apply tw-flex tw-flex-col lg:tw-flex-row lg:tw-space-x-5;
 }
 
 .downloads section button {

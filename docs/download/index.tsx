@@ -1,93 +1,48 @@
 import "./index.css";
-import { ToolStack } from "../../theme/components/ToolStack";
 import { useEffect, useMemo, useState } from "react";
 
 import { FaPencil, FaArrowDown, FaWrench } from "react-icons/fa6";
 import { SiLinux, SiWindows11 } from "react-icons/si";
 import { AiFillAndroid } from "react-icons/ai";
+import { fetchData, FetchReleaseData } from "./fetch";
 
 interface Release {
+  prerelease: boolean;
   tag_name: string;
-  assets: { name: string; browser_download_url: string }[];
-}
-
-interface CachedRelease {
-  tag_name: string;
-  assets: { name: string; browser_download_url: string }[];
-  tt: number;
+  asset: {
+    win32: string;
+    winArm: string;
+    linux: string;
+    linuxArm: string;
+    android: string;
+  }
 }
 
 export default function Download() {
-  const [release, setRelease] = useState<Release>();
-  const [preRelease, setPRelease] = useState<Release>();
+  const [release, setRelease] = useState<FetchReleaseData>();
 
   useEffect(() => {
-    const rInfo: CachedRelease = JSON.parse(localStorage.getItem("r") || "{\"tt\":0}");
-    const prInfo: CachedRelease = JSON.parse(localStorage.getItem("pr") || "{\"tt\":0}");
-
-    const isWithinOneHour = Date.now() - rInfo.tt < 3600000;
-
-    if (isWithinOneHour) {
-      setRelease(rInfo);
-      setPRelease(prInfo);
-    } else {
-
-      (async () => {
-        const releaseInfo: {
-          tag_name: string;
-          assets: { name: string; browser_download_url: string }[];
-        } = await fetch(
-          "https://api.github.com/repos/ahqsoftwares/tauri-ahq-store/releases/latest",
-        )
-          .then((data) => data.json())
-          .then((d) => {
-            console.log(d);
-            return d;
-          });
-
-        localStorage.setItem("r", JSON.stringify({
-          tag_name: releaseInfo.tag_name,
-          assets: releaseInfo.assets,
-          tt: Date.now()
-        }));
-        setRelease(releaseInfo);
-
-        const preReleaseInfo: {
-          tag_name: string;
-          assets: { name: string; browser_download_url: string }[];
-        } = await fetch(
-          "https://api.github.com/repos/ahqsoftwares/tauri-ahq-store/releases",
-        )
-          .then((data) => data.json())
-          .then((d) =>
-            d.filter
-              ? d.filter((d: { prerelease: boolean }) => d.prerelease)
-              : [],
-          )
-          .then((data) => data[0] || { tag_name: "unknown", assets: [] });
-
-        localStorage.setItem("pr", JSON.stringify({
-          tag_name: preReleaseInfo.tag_name,
-          assets: preReleaseInfo.assets,
-          tt: Date.now()
-        }));
-        setPRelease(preReleaseInfo);
-      })();
-    }
+    (async () => {
+      setRelease(await fetchData());
+    })()
   }, []);
 
-  const data = useMemo(() => release?.assets || [], [release]);
-  const alpha = useMemo(() => preRelease?.assets || [], [preRelease]);
   const win32 = navigator.userAgent.includes("Windows");
   const android = navigator.userAgent.includes("Android");
   const x64 = navigator.userAgent.includes("x64");
 
+  const launch = (a: "desktop" | "mobile", b: "preview" | "stable", asset: "win32" | "android" | "winArm" | "linux" | "linuxArm") => {
+    if (release) {
+      window.open(release[a][b].asset[asset], "_blank");
+    }
+  }
+
   return (
     <div className="dwn-page">
-      {release != undefined && preRelease != undefined ? (
+      {release != undefined ? (
         <>
           <div className="tw-flex tw-flex-col tw-text-center tw-justify-center tw-items-center" style={{ "height": "calc(100vh - var(--rp-nav-height))" }}>
-            <button className={win32 ? "win" : android ? "andy" : ""}>
+            <button onClick={() => launch(android ? "mobile" : "desktop", "stable", win32 ? x64 ? "win32" : "winArm" : android ? "android" : x64 ? "linux" : "linuxArm")} className={win32 ? "win" : android ? "andy" : ""}>
               {win32 ? <SiWindows11 size="2rem" color="white" /> : android ? <AiFillAndroid size="2rem" color="white" /> : <SiLinux size="2rem" color="black" />}
               <span>Download for {win32 ? "Windows" : android ? "Android" : "Linux"} {android || x64 ? "" : "(arm64)"}</span>
             </button>
@@ -103,8 +58,8 @@ export default function Download() {
                 <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Windows (x64)</span>
               </h3>
               <section>
-                <button>Download Stable Setup</button>
-                <button>Download Alpha Setup</button>
+                <button onClick={() => launch("desktop", "stable", "win32")}>Download Stable Setup</button>
+                <button onClick={() => launch("desktop", "preview", "win32")}>Download Alpha Setup</button>
               </section>
             </div>
             <div>
@@ -113,8 +68,8 @@ export default function Download() {
                 <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Windows (arm64)</span>
               </h3>
               <section>
-                <button>Download Stable Setup</button>
-                <button>Download Alpha Setup</button>
+                <button onClick={() => launch("desktop", "stable", "winArm")}>Download Stable Setup</button>
+                <button onClick={() => launch("desktop", "preview", "winArm")}>Download Alpha Setup</button>
               </section>
             </div>
           </div>
@@ -126,8 +81,8 @@ export default function Download() {
                 <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Linux (x64)</span>
               </h3>
               <section>
-                <button>Download Stable Setup</button>
-                <button>Download Alpha Setup</button>
+                <button onClick={() => launch("desktop", "stable", "linux")}>Download Stable Setup</button>
+                <button onClick={() => launch("desktop", "preview", "linux")}>Download Alpha Setup</button>
               </section>
             </div>
             <div>
@@ -136,8 +91,8 @@ export default function Download() {
                 <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Linux (arm64)</span>
               </h3>
               <section>
-                <button>Download Stable Setup</button>
-                <button>Download Alpha Setup</button>
+                <button onClick={() => launch("desktop", "stable", "linuxArm")}>Download Stable Setup</button>
+                <button onClick={() => launch("desktop", "preview", "linuxArm")}>Download Alpha Setup</button>
               </section>
             </div>
           </div>
@@ -149,8 +104,8 @@ export default function Download() {
                 <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Android</span>
               </h3>
               <section>
-                <button>Download Stable Setup</button>
-                <button>Download Alpha Setup</button>
+                <button onClick={() => launch("mobile", "stable", "android")}>Download Stable Setup</button>
+                <button onClick={() => launch("mobile", "preview", "android")}>Download Alpha Setup</button>
               </section>
             </div>
             <div>
@@ -173,12 +128,12 @@ export default function Download() {
           <div className="tw-flex tw-mt-2 tw-mb-6">
             <h5 id="other" className="button font-normal black tw-flex tw-flex-col">
               <strong>Desktop</strong>
-              <span>Stable: v<strong>{release.tag_name}</strong></span>
-              <span>Pre-Release: <strong>{preRelease.tag_name}</strong></span>
+              <span>Stable: v<strong>{release.desktop.stable.tag_name}</strong></span>
+              <span>Pre-Release: <strong>{release.desktop.preview.tag_name}</strong></span>
 
               <strong>Mobile</strong>
-              <span>Stable: v<strong>{release.tag_name}</strong></span>
-              <span>Pre-Release: <strong>{preRelease.tag_name}</strong></span>
+              <span>Stable: v<strong>{release.mobile.stable.tag_name}</strong></span>
+              <span>Pre-Release: <strong>{release.mobile.preview.tag_name}</strong></span>
             </h5>
           </div>
         </>
@@ -195,3 +150,5 @@ export default function Download() {
 export const frontmatter = {
   pageType: "custom",
 };
+
+export type { Release }

@@ -1,6 +1,6 @@
 [
   "index",
-  { "type": "separator", "dashed": true },
+  { "type": "divider", "dashed": true },
   {
     "type": "dir",
     "name": "building",
@@ -8,7 +8,7 @@
     "collapsible": true,
     "collapsed": true
   },
-  { "type": "separator", "dashed": true },
+  { "type": "divider", "dashed": true },
   {
     "type": "dir",
     "name": "framework",

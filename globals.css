@@ -57,3 +57,20 @@ html {
   transition: none !important;
   animation: none !important;
 }
+
+.link-group {
+  @apply tw-flex tw-flex-col lg:tw-flex-row tw-space-y-2 lg:tw-space-y-0 lg:tw-space-x-2;
+}
+
+.link-group a {
+  @apply tw-w-full tw-min-h-[5rem] tw-justify-center tw-p-3 tw-bg-[var(--rp-c-bg-mute)] tw-border-[1px] tw-border-[var(--rp-c-text-3)];
+  @apply tw-rounded-md;
+}
+
+.link-group a h1 {
+  @apply tw-flex tw-text-center tw-space-x-2;
+}
+
+.link-group a h1 span {
+  @apply tw-text-xl;
+}

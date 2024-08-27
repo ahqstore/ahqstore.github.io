@@ -1,0 +1,57 @@
+---
+title: Installing CLI
+lastUpdated: true
+---
+import { Steps, PackageManagerTabs, Tab, Tabs } from "rspress/theme"
+
+# Install AHQ Store CLI
+Following are the ways to install AHQ Store CLI
+
+## 1. Install the CLI (NodeJS)
+<Steps>
+  ### Install NodeJS (Optional if using bun)
+    [Download Here](https://nodejs.org/)
+    
+  ### Install your package manager
+    <PackageManagerTabs command={{
+      npm: "npm i -g npm",
+      yarn: "npm i -g yarn",
+      pnpm: "npm i -g pnpm",
+      bun: "# Linux\ncurl -fsSL https://bun.sh/install | bash\n\n# Windows\npowershell -c \"irm bun.sh/install.ps1 | iex\""
+    }} />
+
+  ### Install the CLI
+    <PackageManagerTabs command="install -g @ahqstore/cli" />
+
+  ### Initialize
+    ```sh
+    ahqstore
+    ```
+</Steps>
+
+## 2. Install the CLI (cargo)
+<Steps>
+ ### Download & Install Rust
+  [Download from here](https://rust-lang.org)
+
+ ### Install the CLI
+  <Tabs> 
+    <Tab label="Install Using Cargo"> 
+      ```sh
+      cargo install ahqstore_cli_rs
+      ```
+    </Tab> 
+    
+    <Tab label="Install Using Cargo binstall"> 
+      ```sh
+      cargo install cargo-binstall
+      cargo binstall ahqstore_cli_rs
+      ```
+    </Tab>
+  </Tabs>
+
+ ### Initialize 
+  ```sh
+  ahqstore
+  ```
+</Steps>

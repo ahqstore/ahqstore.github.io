@@ -2,24 +2,30 @@
 title: Introduction
 lastUpdated: true
 ---
-import { SiWindows } from "react-icons/si";
+import { SiWindows, SiLinux } from "react-icons/si";
+import { FaLaptop } from "react-icons/fa6"
 import { Tabs, Tab } from "rspress/theme";
 
 AHQ Store provides you installers for supported and tested platforms, however some platforms binaries and provided by our GitHub Actions Runner that can be installed with a bit of expertise. Alternately you can directly build from source and use it.
 
 ## Select your platform (Prebuilt)
-<div className="">
-  <div style="display:flex;flex-direction:column;">
-    <SiWindows size="2em" />
-    <LinkCard title="Windows 10/11 22H2 (x64/arm64)" description="Install AHQ Store manually via prebuilt binaries" href="/en/raw/a" />
-  </div>
-  <div style="display:flex;flex-direction:column;">
-    <SiWindows size="2em" />
-    <LinkCard title="Linux (x64/arm64)" description="Install AHQ Store manually via prebuilt binaries" href="/en/raw/b"  />
-  </div>
+<div className="link-group">
+    <a href="/guide/building/windows">
+      <h1><SiWindows size="2em" /> <span>Windows (x64/arm64)</span></h1> 
+      <h2>Windows 10/11 22H2 or Above</h2>
+    </a>
+    
+    <a href="/guide/building/linux">
+      <h1><SiLinux size="2em" /> <span>Linux (x64/arm64)</span></h1>
+      <h2>Install AHQ Store manually via prebuilt binaries</h2>
+    </a>
 </div>
 
 ## Build from Repo / Something else?
 
-<Icon name="laptop" size="2em" />
-<LinkCard title="Build from source" description="Build AHQ Store from source" href="/en/raw/e" />
+<div className="link-group">
+  <a href="/guide/building/building">
+    <h1><FaLaptop size="2em" /><span>Build from source</span></h1>
+    <h2>Build AHQ Store from source</h2>
+  </a>
+</div>

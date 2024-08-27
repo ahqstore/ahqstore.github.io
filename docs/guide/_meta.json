@@ -1,0 +1,26 @@
+[
+  "index",
+  { "type": "separator", "dashed": true },
+  {
+    "type": "dir",
+    "name": "building",
+    "label": "Building AHQ Store",
+    "collapsible": true,
+    "collapsed": true
+  },
+  { "type": "separator", "dashed": true },
+  {
+    "type": "dir",
+    "name": "framework",
+    "label": "Integrate with Framework",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "cli",
+    "label": "AHQ Store CLI Reference",
+    "collapsible": true,
+    "collapsed": false
+  }
+]

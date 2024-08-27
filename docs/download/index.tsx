@@ -114,7 +114,7 @@ export default function Download() {
                 <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Build from source</span>
               </h3>
               <section>
-                <button>Read the guide</button>
+                <button onClick={() => window.location.href = "/guide/building/"}>Read the guide</button>
               </section>
             </div>
           </div>

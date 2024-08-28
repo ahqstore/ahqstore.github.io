@@ -1,0 +1,16 @@
+.author {
+  @apply tw-flex tw-bg-[var(--rp-c-bg)] tw-rounded-3xl tw-p-3 tw-w-fit tw-space-x-3;
+  @apply tw-justify-center;
+}
+
+.author img {
+  @apply tw-rounded-[100%] tw-w-[60px] tw-cursor-pointer;
+}
+
+.author nav {
+  @apply tw-flex tw-flex-col;
+}
+
+.author nav span:nth-child(1) {
+  @apply tw-text-lg tw-font-bold;
+}

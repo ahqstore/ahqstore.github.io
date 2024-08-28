@@ -36,7 +36,7 @@
 
 .dwn-page button:focus {
   transition: all 125ms linear;
-  animation: normal 0.5s focus-btn;
+  animation: normal 5s focus-btn;
 }
 
 @keyframes focus-btn {
@@ -48,8 +48,8 @@
     transform: scale(0.85);
   }
 
-  75% {
-    transform: scale(1.1);
+  100% {
+    transform: scale(0.85);
   }
 }
 

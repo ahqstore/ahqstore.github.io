@@ -59,18 +59,57 @@ html {
 }
 
 .link-group {
-  @apply tw-flex tw-flex-col lg:tw-flex-row tw-space-y-2 lg:tw-space-y-0 lg:tw-space-x-2;
+  @apply tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 lg:tw-flex-row tw-gap-5;
 }
 
 .link-group a {
   @apply tw-w-full tw-min-h-[5rem] tw-justify-center tw-p-3 tw-bg-[var(--rp-c-bg-mute)] tw-border-[1px] tw-border-[var(--rp-c-text-3)];
   @apply tw-rounded-md;
+  transition: all;
+}
+
+.link-group a:hover {
+  transition: all 125ms linear;
+  transform: scale(1.05);
+}
+
+.link-group a:focus {
+  transition: all 125ms linear;
+  animation: normal 2s focus-btn;
+}
+
+@keyframes focus-btn {
+  0% {
+    transform: scale(0.85);
+  }
+
+  100% {
+    transform: scale(0.85);
+  }
 }
 
 .link-group a h1 {
-  @apply tw-flex tw-text-center tw-space-x-2;
+  @apply tw-flex tw-text-xl tw-space-x-3;
 }
 
-.link-group a h1 span {
-  @apply tw-text-xl;
+.link-group a strong {
+  @apply tw-block;
+}
+
+.link-group a span {
+  @apply tw-block tw-ml-3;
+}
+
+.announcements {
+  @apply tw-flex tw-flex-col tw-w-full tw-space-y-2;
+}
+
+.announcements a {
+  @apply tw-w-full tw-min-h-[5rem] tw-justify-center tw-p-3 tw-bg-[var(--rp-c-bg-mute)] tw-border-[1px] tw-border-[var(--rp-c-text-3)];
+  @apply tw-rounded-md tw-flex tw-flex-col tw-space-y-3;
+  transition: all;
+}
+
+.announcements a div {
+  @apply tw-flex tw-ml-auto;
 }

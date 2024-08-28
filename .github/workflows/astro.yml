@@ -44,6 +44,7 @@ jobs:
 
       - name: Build
         run: |
+          node parser.mjs
           pnpm build
         working-directory: ${{ env.BUILD_PATH }}
 

@@ -5,6 +5,7 @@ import { FaPencil, FaArrowDown, FaWrench } from "react-icons/fa6";
 import { SiLinux, SiWindows11 } from "react-icons/si";
 import { AiFillAndroid } from "react-icons/ai";
 import { fetchData, FetchReleaseData } from "./fetch";
+import { FaApple } from "react-icons/fa";
 
 interface Release {
   prerelease: boolean;
@@ -30,6 +31,7 @@ export default function Download() {
   const win32 = navigator.userAgent.includes("Windows");
   const android = navigator.userAgent.includes("Android");
   const x64 = navigator.userAgent.includes("x64");
+  const apple = ["Mac", "iPhone", "iPad"].filter((x) => navigator.userAgent.includes(x)).length != 0;
 
   const launch = (a: "desktop" | "mobile", b: "preview" | "stable", asset: "win32" | "android" | "winArm" | "linux" | "linuxArm") => {
     if (release) {
@@ -43,8 +45,12 @@ export default function Download() {
         <>
           <div className="tw-flex tw-flex-col tw-text-center tw-justify-center tw-items-center" style={{ "height": "calc(100vh - var(--rp-nav-height))" }}>
             <button onClick={() => launch(android ? "mobile" : "desktop", "stable", win32 ? x64 ? "win32" : "winArm" : android ? "android" : x64 ? "linux" : "linuxArm")} className={win32 ? "win" : android ? "andy" : ""}>
-              {win32 ? <SiWindows11 size="2rem" color="white" /> : android ? <AiFillAndroid size="2rem" color="white" /> : <SiLinux size="2rem" color="black" />}
-              <span>Download for {win32 ? "Windows" : android ? "Android" : "Linux"} {android || x64 ? "" : "(arm64)"}</span>
+              {apple ? <FaApple size="2em" color="white" /> : win32 ? <SiWindows11 size="2rem" color="white" /> : android ? <AiFillAndroid size="2rem" color="white" /> : <SiLinux size="2rem" color="black" />}
+              {apple ?
+                <span>No Apple sadly, but we have 🍊</span>
+                :
+                <span>Download for {win32 ? "Windows" : android ? "Android" : "Linux"} {android || x64 ? "" : "(arm64)"}</span>
+              }
             </button>
             <a href="#other" className="tw-flex tw-items-center tw-mt-2 tw-border-b-[1px]">Other Downloads <FaArrowDown className="tw-ml-1" /></a>
           </div>

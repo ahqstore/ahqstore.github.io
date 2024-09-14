@@ -45,7 +45,7 @@ export default function Download() {
         <>
           <div className="tw-flex tw-flex-col tw-text-center tw-justify-center tw-items-center" style={{ "height": "calc(100vh - var(--rp-nav-height))" }}>
             <button onClick={() => launch(android ? "mobile" : "desktop", "stable", win32 ? x64 ? "win32" : "winArm" : android ? "android" : x64 ? "linux" : "linuxArm")} className={win32 ? "win" : android ? "andy" : ""}>
-              {apple ? <FaApple size="2em" color="white" /> : win32 ? <SiWindows11 size="2rem" color="white" /> : android ? <AiFillAndroid size="2rem" color="white" /> : <SiLinux size="2rem" color="black" />}
+              {apple ? <FaApple size="2em" color="black" /> : win32 ? <SiWindows11 size="2rem" color="white" /> : android ? <AiFillAndroid size="2rem" color="white" /> : <SiLinux size="2rem" color="black" />}
               {apple ?
                 <span>No Apple sadly, but we have 🍊</span>
                 :

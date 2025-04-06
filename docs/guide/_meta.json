@@ -3,14 +3,6 @@
   { "type": "divider", "dashed": true },
   {
     "type": "dir",
-    "name": "building",
-    "label": "Building AHQ Store",
-    "collapsible": true,
-    "collapsed": true
-  },
-  { "type": "divider", "dashed": true },
-  {
-    "type": "dir",
     "name": "framework",
     "label": "Integrate with Framework",
     "collapsible": true,

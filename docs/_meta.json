@@ -1,16 +1,21 @@
 [
   {
-    "text": "Download",
+    "text": "📥 Download",
     "link": "/download/",
     "activeMatch": "/download/"
   },
   {
-    "text": "Guide",
+    "text": "🔍 Apps",
+    "link": "/applications/",
+    "activeMatch": "/applications/"
+  },
+  {
+    "text": "📚 Guide",
     "link": "/guide/",
     "activeMatch": "/guide/"
   },
   {
-    "text": "Announcements",
+    "text": "📣 Notices",
     "link": "/announcements/",
     "activeMatch": "/announcements/"
   }

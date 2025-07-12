@@ -22,11 +22,6 @@ export default defineConfig({
       },
       { icon: "X", mode: "link", content: "https://x.com/ahqsoftwares" },
       {
-        icon: "github",
-        mode: "link",
-        content: "https://github.com/ahqsoftwares/tauri-ahq-store",
-      },
-      {
         icon: "youtube",
         mode: "link",
         content: "https://www.youtube.com/channel/UC5G8xgHA-bKftjcnPzt-BFw",

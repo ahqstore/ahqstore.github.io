@@ -127,7 +127,7 @@ export default function Download() {
             <div>
               <h3>
                 <SiLinux className="rounded-sm" size="2rem" color="var(--rp-c-text-1)" />
-                <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Linux (x64/.AppImage)</span>
+                <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">[Unavailable] Linux (x64/.AppImage)</span>
               </h3>
               <section>
                 <button onClick={() => launch("stable", "linux", "appimg")}>Download Stable</button>
@@ -161,7 +161,7 @@ export default function Download() {
             <div>
               <h3>
                 <SiLinux className="rounded-sm" size="2rem" color="var(--rp-c-text-1)" />
-                <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">Linux (x64/.AppImage)</span>
+                <span className="tw-ml-[12px] tw-text-[1.5rem] tw-my-auto">[Unavailable] Linux (x64/.AppImage)</span>
               </h3>
               <section>
                 <button onClick={() => launch("stable", "linux", "appimg")}>Download Stable</button>

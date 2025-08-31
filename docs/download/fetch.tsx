@@ -24,10 +24,10 @@ export default function Render() {
 }
 
 async function fetchLatest(file: Release) {
-  const regex = /AHQ\.Store\.Neo_([0-9.]*)_(x86_64|aarch64)\.AppImage/gm;
+  const regex = /AHQ\.Store\.Neo_([0-9.]*)_(amd64|arm64)\.deb/gm;
 
   const aarch64name = file.assets.find(
-    (d) => d.name.endsWith(".AppImage")
+    (d) => d.name.endsWith(".deb")
   )!!.name;
 
   return regex.exec(aarch64name)!![1];

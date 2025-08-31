@@ -55,12 +55,14 @@ export async function fetchData(): Promise<FetchReleaseData> {
     linux: {
       deb: urlD(stable.tag_name, `AHQ.Store.Neo_${stableVer}_amd64.deb`),
       rpm: urlD(stable.tag_name, `AHQ.Store.Neo-${stableVer}-1.x86_64.rpm`),
-      appimg: urlD(stable.tag_name, `AHQ.Store.Neo_${stableVer}_amd64.AppImage`),
+      appimg: ""
+      // appimg: urlD(stable.tag_name, `AHQ.Store.Neo_${stableVer}_amd64.AppImage`),
     },
     linuxArm: {
       deb: urlD(stable.tag_name, `AHQ.Store.Neo_${stableVer}_arm64.deb`),
       rpm: urlD(stable.tag_name, `AHQ.Store.Neo-${stableVer}-1.aarch64.rpm`),
-      appimg: urlD(stable.tag_name, `AHQ.Store.Neo_${stableVer}_aarch64.AppImage`),
+      appimg: ""
+      // appimg: urlD(stable.tag_name, `AHQ.Store.Neo_${stableVer}_aarch64.AppImage`),
     },
     android: urlD(stable.tag_name, "ahqstore_universal-linux-android.apk"),
     androidArm: urlD(stable.tag_name, "ahqstore_arm-linux-android.apk"),
@@ -75,12 +77,14 @@ export async function fetchData(): Promise<FetchReleaseData> {
     linux: {
       deb: urlD(stable.tag_name, `AHQ.Store.Neo_${previewVer}_amd64.deb`),
       rpm: urlD(stable.tag_name, `AHQ.Store.Neo-${previewVer}-1.x86_64.rpm`),
-      appimg: urlD(stable.tag_name, `AHQ.Store.Neo_${previewVer}_amd64.AppImage`),
+      appimg: ""
+      // appimg: urlD(stable.tag_name, `AHQ.Store.Neo_${previewVer}_amd64.AppImage`),
     },
     linuxArm: {
       deb: urlD(stable.tag_name, `AHQ.Store.Neo_${previewVer}_arm64.deb`),
       rpm: urlD(stable.tag_name, `AHQ.Store.Neo-${previewVer}-1.aarch64.rpm`),
-      appimg: urlD(stable.tag_name, `AHQ.Store.Neo_${previewVer}_aarch64.AppImage`),
+      appimg: ""
+      // appimg: urlD(stable.tag_name, `AHQ.Store.Neo_${previewVer}_aarch64.AppImage`),
     },
     android: urlD(preview.tag_name, "ahqstore_universal-linux-android.apk"),
     androidArm: urlD(preview.tag_name, "ahqstore_arm-linux-android.apk"),

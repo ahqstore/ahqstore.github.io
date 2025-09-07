@@ -14,5 +14,12 @@
     "label": "AHQ Store CLI Reference",
     "collapsible": true,
     "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "architecture",
+    "label": "AHQ Store Architecture",
+    "collapsible": true,
+    "collapsed": false
   }
 ]

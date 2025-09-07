@@ -1,10 +1,19 @@
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 .author {
-  @apply tw-flex tw-bg-[var(--rp-c-bg)] tw-rounded-3xl tw-p-3 tw-w-fit tw-space-x-3;
+  @apply tw-flex tw-bg-gray-300/70 tw-rounded-lg tw-px-4 tw-py-1 tw-w-fit tw-space-x-3;
   @apply tw-justify-center;
 }
 
+.dark {
+  .author {
+    @apply tw-bg-gray-600/70;
+  }
+}
+
 .author img {
-  @apply tw-rounded-[100%] tw-w-[60px] tw-cursor-pointer;
+  @apply tw-rounded-[100%] tw-w-7 tw-h-7 tw-my-auto tw-cursor-pointer;
 }
 
 .author nav {
@@ -13,4 +22,8 @@
 
 .author nav span:nth-child(1) {
   @apply tw-text-lg tw-font-bold;
+}
+
+.author nav span:nth-child(2) {
+  @apply tw-text-sm;
 }

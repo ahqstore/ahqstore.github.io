@@ -5,6 +5,7 @@ module.exports = {
     "./theme/**/*.{mdx,css,ts,tsx}",
     "./docs/**/*.{mdx,md,ts,tsx,css}",
   ],
+  darkMode: "class",
   theme: {
     extend: {},
   },

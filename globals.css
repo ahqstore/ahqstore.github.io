@@ -105,11 +105,15 @@ html {
 }
 
 .announcements a {
-  @apply tw-w-full tw-min-h-[5rem] tw-justify-center tw-p-3 tw-bg-[var(--rp-c-bg-mute)] tw-border-[1px] tw-border-[var(--rp-c-text-3)];
-  @apply tw-rounded-md tw-flex tw-flex-col tw-space-y-3;
+  @apply tw-w-full tw-min-h-[5rem] tw-justify-center tw-p-3 tw-bg-[var(--rp-c-bg-mute)] tw-border-none hover:tw-bg-gray-200 tw-transition-all;
+  @apply tw-rounded-lg tw-flex tw-flex-col tw-space-y-3;
   transition: all;
 }
 
+.dark .announcements a {
+  @apply hover:tw-bg-gray-700;
+}
+
 .announcements a div {
-  @apply tw-flex tw-ml-auto;
+  @apply tw-flex tw-ml-auto tw-gap-2;
 }

@@ -3,8 +3,8 @@
   { "type": "divider", "dashed": true },
   {
     "type": "dir",
-    "name": "framework",
-    "label": "Integrate with Framework",
+    "name": "integrate",
+    "label": "Integrate with AHQ Store",
     "collapsible": true,
     "collapsed": false
   },

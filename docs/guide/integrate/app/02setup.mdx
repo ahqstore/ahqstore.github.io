@@ -1,0 +1,82 @@
+---
+title: "Step 02: CLI Usage"
+---
+
+## Installing the CLI
+
+### Cargo
+
+We have to install the AHQ Store CLI using cargo and cargo binstall.
+This means that you need to have **RustLang** installed or you should
+look into [prebuilt binaries](#prebuilt-binaries)
+
+There are two ways:
+
+- **cargo binstall** (preferred way)
+- **cargo install** (official way)
+
+#### cargo binstall
+
+Its a simple command, you need to have **cargo-binstall** installed. To
+install using this. Run
+
+```sh
+cargo binstall ahqstore_cli_rs
+```
+
+Output (with guide)
+
+```js
+INFO resolve: Resolving package: 'ahqstore_cli_rs'
+INFO This will install the following binaries:
+INFO   - ahqstore.exe => C:\Users\Windows\.cargo\bin\ahqstore.exe
+
+# write yes and then press enter
+Do you wish to continue? [yes]/no
+ ? yes
+
+INFO Installing binaries...
+INFO Done in 8.0826489s
+```
+
+#### cargo install
+
+Its a simple command, you need to have **cargo and rust language** installed. To
+install using this. Run
+
+```sh
+cargo install ahqstore_cli_rs
+```
+
+Output (with guide)
+
+```js
+Updating crates.io index
+Downloaded ahqstore_cli_rs v0.9.1
+Downloaded 1 crate (82.6KiB) in 0.71s
+
+# many lines showing compilation of code....
+
+Installed package `ahqstore_cli_rs v0.9.1`
+```
+
+### Prebuilt Binaries
+
+We have prebuilt binaries at
+
+https://github.com/ahqstore/cli/releases
+
+The releases with the name
+
+**"CLI Binaries"**
+
+contains these binaries
+
+<img src="/img/cli/bin.png" alt="The release to download from" />
+
+This is contain the binary for your architecture. Click on the assets (as shown by the red arrow) and
+select the one for your hardware.
+
+:::tip Why not an npm version
+Good question, we're working on that and will share the status of that very soon! Stay Tuned
+:::

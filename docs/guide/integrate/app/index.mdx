@@ -1,0 +1,150 @@
+---
+title: Introduction
+---
+
+## Beginning the guide
+
+This guide explores how developers can integrate their application with AHQ Store
+application system pipeline. It is a friendly but informative and detailed article.
+
+Let us start with OS coverage.
+
+## OS Coverage
+
+AHQ Store covers the following OSes:
+
+### 1. Windows
+
+Windows is an operating system made by Microsoft. The screenshots that you've been till now
+are all captured from this operating system. Specifically **Windows 11 24H2 26120.5790**
+
+AHQ Store supports the following file formats:
+
+- .exe: A standard installer option. **AHQ Store does not manage updates for this platform due to it not having a stable API / CLI interface**
+- .msi: A standard installer option that is still widely used today
+- .zip: Custom zip with a main .exe file that will be linked to the start menu. These are generally portable binaries
+- .msix: This is the next generation of installer bundles made by Microsoft.
+- .ahqdb: Our custom bundle so that every app can be created into an ahq store application.
+
+### 2. Android
+
+Android is a mobile operating system maintained by Google. AHQ Store supports **apk**, the universal
+installer format used by this operating system. We've full support for Updates, Installation, Uninstallation
+for this file format.
+
+### 3. Linux
+
+:::info TL;DR
+Sorry linux guys, we're quite limited at the moment. Not all linux apps can work with AHQ Store for now.
+:::
+
+AHQ Store has limited support for Linux for now. We fully support the **AppImage** file format for application Installation and updates.
+
+We've been thinking of supporting .deb, .rpm but its very tedious and time consuming. So, in future, we're planning to introduce our own
+installation format: `.ahqdb` for Linux.
+
+Sadly, this will result in this:
+
+<img
+  src="https://imgs.xkcd.com/comics/standards_2x.png"
+  alt="Competiting standards result in even more competiting standards"
+/>
+
+> ©️ xkcd.
+> We have just used their illustrations.
+> Original: https://xkcd.com/927/
+
+## This Guide
+
+We'll explore AHQ Store Integration by creating a cross platform
+**ElectronJS** application with electron-vite and pnpm.
+The procedure from **Setting up CLI** is the same for any type of AHQ Store Project.
+
+## 🚀 Let's start
+
+### Scaffolding the electron application
+
+This is how to create an electron vite application
+
+```sh
+pnpm create vite
+```
+
+This is the output (normalized for clarity)
+
+```js
+│
+◇  Project name:
+│  myapp
+│
+◇  Select a framework:
+│  Others
+│
+◇  Select a variant:
+│  Electron ↗
+√ Project template: » React
+
+Scaffolding project in E:\GitHub\myapp...
+
+Done. Now run:
+
+  cd myapp
+  pnpm install
+  pnpm run dev
+```
+
+### Installing Dependencies
+
+Now to install the nodejs dependencies. Run these. Replace `myapp` with the name the command output gave you.
+
+```sh
+cd myapp
+pnpm install
+```
+
+It will download the NodeJS depedencies for the **electron** package and will also setup **react** for the frontend ui.
+
+Discussing how electronjs and react works is outside the scope of this guide. We assume that you know them. If not, we're leaving out a few links to them:-
+
+- ElectronJS: https://www.electronjs.org/docs/latest/
+- React: https://react.dev/learn
+
+Back to main topic, after installation `pnpm` users need to approve builds for packages.
+
+### Approving Builds (pnpm only)
+
+Just run this
+
+```sh
+pnpm approve-builds
+```
+
+As customary, this is the output (with a guide of what to input in the TUI)
+The output might vary a but on your pnpm version, but we've annotated it with accuracy
+
+```js
+√ Choose which packages to build (Press <space> to select, <a> to toggle all, <i> to invert selection) · electron, esbuild
+# press `a` then press Enter key
+
+√ The next packages will now be built: electron, esbuild.
+Do you approve? (Y/N) · Yes
+
+esbuild: Running postinstall script, done in 1.6s
+electron: Running postinstall script, done in 45.7s
+```
+
+### Reaping the fruit (optional)
+
+To look at the outcome of all this hard work you can run
+
+```sh
+pnpm dev
+```
+
+and you'll see the electronjs app that you built!
+
+<img
+  src="/img/fruit.png"
+  alt="The electronjs app we've worked so long to create"
+  width={600}
+/>

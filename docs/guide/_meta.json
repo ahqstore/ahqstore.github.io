@@ -10,6 +10,13 @@
   },
   {
     "type": "dir",
+    "name": "automate",
+    "label": "Automate the hard tasks",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
     "name": "cli",
     "label": "AHQ Store CLI Reference",
     "collapsible": true,

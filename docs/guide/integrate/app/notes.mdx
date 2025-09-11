@@ -1,0 +1,116 @@
+---
+title: Quick Notes
+---
+
+I know you still have many doubts left. Lemme tell you a few things
+
+- "Aight, but what about linux, android. How will it work?"
+- "Well, well, well. What if I am not using WindowsZip"
+
+Here are a quick notes that you should know.
+
+:::tip Pro Tip
+👉 Use the **ON THIS PAGE** to quickly switch to your topic
+:::
+
+## Android
+
+This is also quite identical as well.
+
+For android, you have to set three things :-
+
+### `androidUniversal`: "AndroidApkZip"
+
+`"AndroidApkZip"` is the only allowed value and is the only format AHQ Store on Android supports.
+
+This is the standard `.apk` file on android.
+
+### `androidOptions`
+
+`"minSdk"` means the minimum android version that your app runs on. This is used by AHQ Store
+to verify if your app can be installed on a certain android device.
+
+You can find abi levels here: https://apilevels.com/
+
+We generally recommend at least **Android 10** i.e. minSdk = 29
+
+```json title="config.json"
+"androidOptions": {
+  "minSdk": 29, // This specifies the minimum sdk of your android application
+  "abi": ["Aarch64", "Armv7", "X86", "X64"] // Generally to be kept as is. This means that it can run on both x86 or x86_64 (Desktop chip) android and armv7, aarch64 (mobile chip) android abi
+},
+```
+
+### finder.`androidUniversalFinder`
+
+This is already self-explanatory since this is exactly the same
+
+These properties are used by the CLI to fetch the asset from GitHub Releases.
+
+```js title="config.json"
+"finder": {
+  "androidUniversalFinder": {
+    "startsWith": "My.Cool.Application",
+    "contains": "Android",
+    "endsWith": ".apk"
+  },
+}
+```
+
+## Windows (in depth)
+
+{/* TODO: add docs */}
+:::info TODO: soon
+
+Documentation pending
+
+:::
+
+## Linux
+
+:::danger 🔬 Experimental 🔥 Breaking
+You're heading into the experimental and straight up breaking territory. AHQ Store on Linux
+is currently loosely designed with many probable changes or maybe even removal of the platform
+altogether for some time (not forever, don't worry)
+
+Hence, you're requested to keep up with the updates & the schema changes and regularly update the
+**AHQ Store CLI**
+:::
+
+:::warning Hello Linux Folks
+We're quite sorry but actually `linuxArm32Platform` is an unsupported platform, that's
+highly (100%) unlikely to be supported by AHQ Store. It is just there for the record and
+might be removed anytime soon!
+:::
+
+First of all we're using a variable here `{arch}`
+
+### Values of `{arch}`
+
+This value generally is any three of the following :
+
+- "Amd64"
+- "Arm64"
+- "Arm32"
+
+For linux, you only have to set two things :-
+
+### `linux{arch}Platform`: "LinuxAppImage"
+
+`"LinuxAppImage"` is the only allowed value and is the only format AHQ Store on Linux supports.
+
+### finder.`linux{arch}Finder`
+
+This is already self-explanatory since this is exactly the same.
+
+These properties are used by the CLI to fetch the asset from GitHub Releases.
+
+```js title="config.json"
+"finder": {
+  "linux{arch}Finder": {
+    "startsWith": "My.Cool.Application",
+    "contains": "Linux",
+    "endsWith": "-{arch}.AppImage"
+  },
+}
+```

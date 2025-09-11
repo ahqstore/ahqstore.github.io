@@ -11,7 +11,7 @@
   {
     "type": "dir",
     "name": "automate",
-    "label": "Automate the hard tasks",
+    "label": "Automation",
     "collapsible": true,
     "collapsed": false
   },

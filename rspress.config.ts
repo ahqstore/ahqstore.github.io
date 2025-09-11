@@ -33,5 +33,8 @@ export default defineConfig({
     },
     enableContentAnimation: false,
   },
+  markdown: {
+    defaultWrapCode: true,
+  },
   head: ["<meta name=\"google-site-verification\" content=\"tAPao4KfR_qkSgZTb5aWmvXMOVwmjE9FxrHIUJ2PVIo\">"]
 });

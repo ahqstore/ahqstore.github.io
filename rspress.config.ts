@@ -33,4 +33,5 @@ export default defineConfig({
     },
     enableContentAnimation: false,
   },
+  head: ["<meta name=\"google-site-verification\" content=\"tAPao4KfR_qkSgZTb5aWmvXMOVwmjE9FxrHIUJ2PVIo\">"]
 });

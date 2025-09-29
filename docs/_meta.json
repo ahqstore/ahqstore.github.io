@@ -15,6 +15,11 @@
     "activeMatch": "/guide/"
   },
   {
+    "text": "📖 Docs",
+    "link": "https://ahqstore.github.io/docs/",
+    "activeMatch": "/download/"
+  },
+  {
     "text": "📣 Notices",
     "link": "/announcements/",
     "activeMatch": "/announcements/"
